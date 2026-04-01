@@ -1,0 +1,41 @@
+% q0047.tex — ZaneTech
+\question{
+  id        = {0047},
+  title     = {ZaneTech},
+  source    = {OBECON},
+  year      = {2026},
+  round     = {Seletiva IEO -- Phase C},
+  language  = {English},
+  topic     = {Finance},
+  subtopic  = {NPV / Growing Perpetuity},
+  type      = {objective},
+  statement = {%
+    ZaneTech evaluates a project requiring a \$50M initial investment. The
+    project generates a Year~1 cash flow of \$6.8M, growing at 3\% annually
+    for 10~years (the project terminates at Year~10). The discount rate is
+    10\%. Should ZaneTech proceed with the project?
+  },
+  choices   = {%
+    \item Yes, NPV is positive at approximately \$10.5 million.
+    \item Yes, NPV is positive at approximately \$5.3 million.
+    \item No, NPV is negative at approximately $-$\$4.2 million.
+    \item No, NPV is negative at approximately $-$\$3.2 million.
+  },
+  answer    = {D},
+  solution  = {%
+    Using the growing perpetuity (Gordon Growth) approach to value a growing
+    annuity:
+    \[
+      PV_{\text{perp from yr 1}} = \frac{6.8}{0.10 - 0.03} = \frac{6.8}{0.07}
+      \approx \$97.14\text{M}.
+    \]
+    \[
+      PV_{\text{perp from yr 11}} = \frac{6.8 \times 1.03^{10}}{0.07 \times
+      1.10^{10}} \approx \frac{9.14}{0.07 \times 2.594} \approx \$50.34\text{M}.
+    \]
+    \[
+      NPV = -50 + 97.14 - 50.34 \approx -\$3.20\text{M}.
+    \]
+    The NPV is negative, so ZaneTech should not proceed. (D) is correct.
+  },
+}

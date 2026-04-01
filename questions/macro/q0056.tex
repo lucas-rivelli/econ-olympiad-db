@@ -1,0 +1,39 @@
+% q0056.tex — Steady-State?
+\question{
+  id        = {0056},
+  title     = {Steady-State?},
+  source    = {OBECON},
+  year      = {2026},
+  round     = {Seletiva IEO -- Phase C},
+  language  = {English},
+  topic     = {Macro},
+  subtopic  = {Solow Growth Model / Steady State},
+  type      = {objective},
+  statement = {%
+    Maria's economy has production function $Y = 100\sqrt{KL}$, a savings rate
+    $s = 1/5$, depreciation $\delta = 10\%$, and a fixed labour force of
+    $L = 100$ million workers. Current capital is $K_0 = 400$ million. What is
+    the long-run steady-state capital per worker $k^*$ (in thousands of
+    dollars per worker)?
+  },
+  choices   = {%
+    \item $k^* = 4$ thousand dollars per worker.
+    \item $k^* = 40$ thousand dollars per worker.
+    \item $k^* = 400$ thousand dollars per worker.
+    \item $k^* = 4$ million dollars per worker.
+  },
+  answer    = {B},
+  solution  = {%
+    Rewrite the production function in per-worker terms. With $k = K/L$:
+    \[
+      y = \frac{Y}{L} = \frac{100\sqrt{KL}}{L} = 100\sqrt{k}.
+    \]
+    At the steady state, investment equals depreciation:
+    \[
+      s \cdot y = \delta k^* \implies \frac{1}{5} \cdot 100\sqrt{k^*}
+      = 0.1\, k^* \implies 20\sqrt{k^*} = 0.1\, k^*.
+    \]
+    Solving: $\sqrt{k^*} = 200$, so $k^* = 40{,}000$, i.e.\ \textbf{40
+    thousand} dollars per worker. (B) is correct.
+  },
+}

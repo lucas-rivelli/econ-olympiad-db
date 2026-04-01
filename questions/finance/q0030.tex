@@ -1,0 +1,87 @@
+% q0030.tex — Leveraging the Situation
+\question{
+  id        = {0030},
+  title     = {Leveraging the Situation},
+  source    = {OBECON},
+  year      = {2026},
+  round     = {Seletiva IEO -- Phase B},
+  language  = {English},
+  topic     = {Finance},
+  subtopic  = {Operating Leverage / Firm Theory},
+  type      = {dissertative},
+  statement = {%
+    Consider two firms in different competitive markets, both facing the
+    same price $P$. There is no entry or exit. Firm~A has fixed cost $FC_A$
+    and marginal cost $MC_A(q) = 2 + q$. Firm~B has no fixed costs and the
+    same marginal cost $MC_B(q) = 2 + q$.
+
+    \begin{enumerate}[(a)]
+      \item (20 points) For any given price $P$, determine the
+            profit-maximising output for each firm.
+            \textit{Hint: variable cost equals the area of the trapezoid
+            under the marginal cost curve up to the optimal quantity.}
+
+      \item (20 points) Suppose price doubles from $P = 6$ to $P' = 12$.
+            Compute the absolute change in operating profit for Firm~A and
+            Firm~B. Express answers as functions of $FC_A$ only.
+
+      \item (15 points) Define the degree of operating leverage as
+            \[
+              \text{OL} = \frac{\%\,\Delta\,\text{operating profit}}
+                               {\%\,\Delta\,\text{revenue}}.
+            \]
+            Calculate OL for both firms as price rises from $P=6$ to
+            $P'=12$, and explain the implications.
+
+      \item (25 points)
+            \begin{enumerate}[(i)]
+              \item Explain how operating leverage relates to variability of
+                    a firm's profit.
+              \item Name and briefly explain two other financial risks that
+                    affect profit variability.
+            \end{enumerate}
+
+      \item (20 points) Provide two sectors with typically \textbf{high}
+            operating leverage and two with \textbf{low} operating leverage,
+            briefly justifying each.
+    \end{enumerate}
+  },
+  choices   = {},
+  answer    = {},
+  solution  = {%
+    \textbf{(a)} Variable cost: $VC(q) = 2q + q^2/2$. Shutdown condition:
+    $P \ge AVC_{\min} = 2$. Profit-maximising output (if $P \ge 2$):
+    $q^* = P - 2$.
+
+    \textbf{(b)} General profit: $\Pi = (P-2)^2/2 - FC$.
+    \begin{itemize}
+      \item Firm A: $\Pi_A^t = 8 - FC_A$, $\Pi_A^{t+1} = 50 - FC_A$,
+            $\Delta\Pi_A = 42$.
+      \item Firm B: $\Pi_B^t = 8$, $\Pi_B^{t+1} = 50$,
+            $\Delta\Pi_B = 42$.
+    \end{itemize}
+    Both have the same absolute change because $FC_A$ cancels.
+
+    \textbf{(c)} Revenue at $P=6$: 24; at $P'=12$: 120.
+    $\%\Delta R = 400\%$ for both.
+    \[
+      OL_A = \frac{42/(8-FC_A)}{4} = \frac{21}{16-2FC_A}, \qquad
+      OL_B = \frac{42/8}{4} = \frac{21}{16} \approx 1.31.
+    \]
+    Since $FC_A > 0$ reduces the base profit $\Pi_A^t$, $OL_A > OL_B$:
+    fixed costs amplify the sensitivity of profits to revenue changes.
+
+    \textbf{(d.i)} Higher operating leverage amplifies both positive and
+    negative revenue shocks into larger percentage profit swings, increasing
+    earnings volatility.
+
+    \textbf{(d.ii)} Financial leverage (fixed interest obligations amplify
+    operating profit fluctuations into larger net-income swings) and
+    foreign-exchange exposure (currency movements affect revenues or input
+    costs independently of operations).
+
+    \textbf{(e)} \textbf{High OL}: airlines (aircraft, infrastructure) and
+    utilities (power plants, networks). \textbf{Low OL}: consulting (mainly
+    variable labour) and staffing agencies (costs scale with placements).
+  },
+}

@@ -26,3 +26,44 @@ id,title,source,year,round,language,topic,subtopic,type,file_path,answer,has_ima
 0025,Maximizing Shareholder Value,OBECON,2026,Seletiva IEO - Phase A,English,Finance,Corporate Finance / IRR,numeric,questions/finance/q0025.tex,100,false
 0026,Matthew 14:13-21,OBECON,2026,Seletiva IEO - Phase A,English,Macro,Monetary Policy / Money Multiplier,numeric,questions/macro/q0026.tex,5000,false
 0027,Follow the Leader,OBECON,2026,Seletiva IEO - Phase A,English,Game Theory,Industrial Organization / Stackelberg vs Cournot,numeric,questions/game_theory/q0027.tex,-200,false
+0028,The "Beverage" Curve,OBECON,2026,Seletiva IEO - Phase B,English,Macro,Labor Markets / Beveridge Curve,dissertative,questions/macro/q0028.tex,,true
+0029,Music or Noise?,OBECON,2026,Seletiva IEO - Phase B,English,Micro,Externalities / Social Welfare,dissertative,questions/micro/q0029.tex,,false
+0030,Leveraging the Situation,OBECON,2026,Seletiva IEO - Phase B,English,Finance,Operating Leverage / Firm Theory,dissertative,questions/finance/q0030.tex,,false
+0031,The Visible Hand,OBECON,2026,Seletiva IEO - Phase B,English,Macro,Coordination Games / Fiscal Policy / Big Push,dissertative,questions/macro/q0031.tex,,true
+0032,So where is this discount factor anyway?,OBECON,2026,Seletiva IEO - Phase B,English,Finance,Asset Pricing / CAPM / Fama-French,dissertative,questions/finance/q0032.tex,,false
+0033,Drawing the Line,OBECON,2026,Seletiva IEO - Phase B,English,Game Theory,Mixed Strategy Nash Equilibrium / Integer Game,dissertative,questions/game_theory/q0033.tex,,false
+0034,OUR Street,OBECON,2026,Seletiva IEO - Phase C,English,Micro,Public Goods,objective,questions/micro/q0034.tex,B,false
+0035,The Coupon That Hits Home,OBECON,2026,Seletiva IEO - Phase C,English,Finance,Bond Pricing / Par Value,objective,questions/finance/q0035.tex,C,false
+0036,Follow the Smell(s),OBECON,2026,Seletiva IEO - Phase C,English,Micro,Utility Maximization / Budget Constraint,objective,questions/micro/q0036.tex,C,false
+0037,No Food No Fun,OBECON,2026,Seletiva IEO - Phase C,English,Macro,Supply Shocks / Stagflation,objective,questions/macro/q0037.tex,B,false
+0038,Same Notes Different Song,OBECON,2026,Seletiva IEO - Phase C,English,Macro,Unemployment / Composition Effects,objective,questions/macro/q0038.tex,C,false
+0039,Shielding from the Lion,OBECON,2026,Seletiva IEO - Phase C,English,Finance,Tax Shield / Capital Structure,objective,questions/finance/q0039.tex,A,false
+0040,One Project to Rule Them All,OBECON,2026,Seletiva IEO - Phase C,English,Finance,NPV / Capital Budgeting,objective,questions/finance/q0040.tex,A,false
+0041,Diversify or Die Trying,OBECON,2026,Seletiva IEO - Phase C,English,Finance,Portfolio Diversification / MPT,objective,questions/finance/q0041.tex,D,false
+0042,Keynesia,OBECON,2026,Seletiva IEO - Phase C,English,Macro,Keynesian Multiplier / Fiscal Policy,objective,questions/macro/q0042.tex,D,false
+0043,Bubble Tea or Artisanal Coffee?,OBECON,2026,Seletiva IEO - Phase C,English,Macro,CPI / Index Numbers / Substitution Bias,objective,questions/macro/q0043.tex,B,true
+0044,Fed Facts,OBECON,2026,Seletiva IEO - Phase C,English,Macro,Monetary Policy / Central Banking,objective,questions/macro/q0044.tex,C,false
+0045,Combining Forces,OBECON,2026,Seletiva IEO - Phase C,English,Finance,NPV / IRR Profiles,objective,questions/finance/q0045.tex,D,false
+0046,When Ceteris Isn't Paribus,OBECON,2026,Seletiva IEO - Phase C,English,Micro,Econometrics / Selection Bias,objective,questions/micro/q0046.tex,B,false
+0047,ZaneTech,OBECON,2026,Seletiva IEO - Phase C,English,Finance,NPV / Growing Perpetuity,objective,questions/finance/q0047.tex,D,false
+0048,Playing It Safe,OBECON,2026,Seletiva IEO - Phase C,English,Finance,Capital Structure / Investment Risk,objective,questions/finance/q0048.tex,C,false
+0049,Do I Take the Bus or the Subway?,OBECON,2026,Seletiva IEO - Phase C,English,Micro,Demand Systems / Perfect Complements,objective,questions/micro/q0049.tex,B,false
+0050,Who ate my cake?,OBECON,2026,Seletiva IEO - Phase C,English,Macro,Inflation / Shrinkflation,objective,questions/macro/q0050.tex,B,false
+0051,Nobody expects the Monetary Inquisition!,OBECON,2026,Seletiva IEO - Phase C,English,Macro,Rational Expectations / New Classical,objective,questions/macro/q0051.tex,A,false
+0052,Timing Is (Almost) Everything,OBECON,2026,Seletiva IEO - Phase C,English,Finance,Valuation / Mid-Year Convention,objective,questions/finance/q0052.tex,B,false
+0053,Is this (Deadweight) Loss?,OBECON,2026,Seletiva IEO - Phase C,English,Micro,Monopoly / Deadweight Loss,objective,questions/micro/q0053.tex,A,false
+0054,Bloppar Blues,OBECON,2026,Seletiva IEO - Phase C,English,Macro,Exchange Rate / Balance Sheet Effects,objective,questions/macro/q0054.tex,C,false
+0055,Is Second-Bid Actually Mid?,OBECON,2026,Seletiva IEO - Phase C,English,Micro,Auction Theory / Second-Price Auction,objective,questions/micro/q0055.tex,B,false
+0056,Steady-State?,OBECON,2026,Seletiva IEO - Phase C,English,Macro,Solow Growth Model / Steady State,objective,questions/macro/q0056.tex,B,false
+0057,Surviving Losses,OBECON,2026,Seletiva IEO - Phase C,English,Micro,Firm Theory / Shutdown Decision,objective,questions/micro/q0057.tex,D,false
+0058,Stalk and Berg,OBECON,2026,Seletiva IEO - Phase C,English,Micro,Industrial Organization / Stackelberg,objective,questions/micro/q0058.tex,B,false
+0059,Vacation Financed,OBECON,2026,Seletiva IEO - Phase C,English,Finance,Loan Amortization / Annuity,objective,questions/finance/q0059.tex,C,false
+0060,Cartel Demolition,OBECON,2026,Seletiva IEO - Phase C,English,Micro,Oligopoly / Cournot / Price Ceiling,objective,questions/micro/q0060.tex,B,false
+0061,Forecasts for Sale,OBECON,2026,Seletiva IEO - Phase C,English,Finance,Real Options / Value of Information,objective,questions/finance/q0061.tex,A,false
+0062,The More the Merrier?,OBECON,2026,Seletiva IEO - Phase C,English,Macro,Real vs Nominal Income,objective,questions/macro/q0062.tex,D,false
+0063,In Search of the Automatic Economy,OBECON,2026,Seletiva IEO - Phase C,English,Micro,Competitive Equilibrium / Time Scarcity,objective,questions/micro/q0063.tex,C,false
+0064,Slicing the Pizza,OBECON,2026,Seletiva IEO - Phase C,English,Finance,Modigliani-Miller / Capital Structure,dissertative,questions/finance/q0064.tex,,false
+0065,To Be Rational or Adaptive?,OBECON,2026,Seletiva IEO - Phase C,English,Macro,Expectations / Phillips Curve / Monetary Policy,dissertative,questions/macro/q0065.tex,,false
+0066,A Clean Cut at the Clinic,OBECON,2026,Seletiva IEO - Phase C,English,Micro,Price Elasticity / Regression Discontinuity Design,dissertative,questions/micro/q0066.tex,,true
+0067,Capitalist Destruction,OBECON,2026,Seletiva IEO - Phase C,English,Macro,Creative Destruction / Schumpeter / Innovation,dissertative,questions/macro/q0067.tex,,false
+0068,Foodbook,OBECON,2026,Seletiva IEO - Phase C,English,Micro,Information Cascades / Bayesian Updating,dissertative,questions/micro/q0068.tex,,false

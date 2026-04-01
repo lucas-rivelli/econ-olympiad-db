@@ -1,0 +1,82 @@
+% q0068.tex — Foodbook
+\question{
+  id        = {0068},
+  title     = {Foodbook},
+  source    = {OBECON},
+  year      = {2026},
+  round     = {Seletiva IEO -- Phase C},
+  language  = {English},
+  topic     = {Micro},
+  subtopic  = {Information Cascades / Bayesian Updating},
+  type      = {dissertative},
+  statement = {%
+    A restaurant is either Good (probability $\tfrac{1}{2}$) or Bad
+    (probability $\tfrac{1}{2}$). Each customer receives an independent
+    private signal: ``Good'' with probability $\tfrac{2}{3}$ if the
+    restaurant is Good, and ``Bad'' with probability $\tfrac{2}{3}$ if it
+    is Bad. Entering gives payoff $+1$ if the restaurant is Good and $-1$
+    if Bad; not entering gives payoff $0$.
+
+    \begin{enumerate}[(a)]
+      \item (20 points) Alice is first. She receives a ``Bad'' signal.
+            Calculate her posterior probability that the restaurant is Good
+            and determine her optimal action.
+
+      \item (20 points) Bob is second. He observes that Alice did not enter.
+            What does Bob infer about Alice's signal? What is his posterior
+            that the restaurant is Good, and what is his optimal action?
+
+      \item (30 points) Charles is third. He observes that both Alice and
+            Bob did not enter, and receives a ``Good'' signal. What does
+            Charles infer from the history? What is his optimal action?
+            Explain how an \emph{information cascade} forms.
+
+      \item (30 points) From the fourth customer onward, does the cascade
+            persist even if customers continue receiving ``Good'' signals?
+            Discuss the efficiency implications and provide two real-world
+            examples of information cascades.
+    \end{enumerate}
+  },
+  choices   = {},
+  answer    = {},
+  solution  = {%
+    \textbf{(a)} Posterior (Good $|$ Bad signal):
+    \[
+      P(G|\text{Bad}) = \frac{(1/3)(1/2)}{(1/3)(1/2)+(2/3)(1/2)} = \frac{1}{3}.
+    \]
+    Expected payoff from entering: $(1/3)(+1)+(2/3)(-1) = -1/3 < 0$.
+    Alice should \textbf{not enter}.
+
+    \textbf{(b)} Bob knows Alice's not-entering reveals she received a
+    ``Bad'' signal. His posterior is also $P(G|\text{Bad signal}) = 1/3$.
+    Expected payoff $= -1/3 < 0$. Bob should \textbf{not enter}.
+
+    \textbf{(c)} Charles infers: Alice got Bad ($\Rightarrow$ prior drops to
+    $1/3$). If Bob got Good, $P(G) = 1/2$ and he'd be indifferent (enters by
+    assumption). Since Bob also didn't enter, Bob got Bad. Prior for Charles:
+    $P(G) = 1/5$. Updating on Charles's Good signal:
+    \[
+      P(G|\text{Good, history}) = \frac{(2/3)(1/5)}{(2/3)(1/5)+(1/3)(4/5)}
+      = \frac{1}{3}.
+    \]
+    Expected payoff $= -1/3 < 0$. Charles should \textbf{not enter} despite
+    his favourable private signal. An \textbf{information cascade} has
+    formed: the public history overwhelms private signals, and rational
+    agents ignore their own information in favour of observed behaviour.
+
+    \textbf{(d)} Yes, the cascade persists: subsequent customers reason the
+    same way as Charles, ignoring Good signals. This is \textbf{dynamically
+    inefficient}: private information is wasted, and a Good restaurant may
+    go patronised only if early customers happened to receive Bad signals.
+
+    \textit{Real-world examples}:
+    \begin{itemize}
+      \item \textbf{Financial herding}: investors observe others buying or
+            selling an asset and follow the crowd, ignoring private
+            information --- driving bubbles and crashes.
+      \item \textbf{Technology lock-in}: consumers adopt a technology (e.g.\
+            VHS over Betamax) because others did, even if an alternative is
+            superior, creating welfare-reducing path dependence.
+    \end{itemize}
+  },
+}

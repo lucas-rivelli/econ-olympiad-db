@@ -1,0 +1,70 @@
+% q0032.tex — So where is this discount factor, anyway?
+\question{
+  id        = {0032},
+  title     = {So where is this discount factor, anyway?},
+  source    = {OBECON},
+  year      = {2026},
+  round     = {Seletiva IEO -- Phase B},
+  language  = {English},
+  topic     = {Finance},
+  subtopic  = {Asset Pricing / CAPM / Fama-French},
+  type      = {dissertative},
+  statement = {%
+    Asset pricing theory provides a framework for determining the fair value
+    of financial assets based on expected cash flows and associated risks.
+
+    \begin{enumerate}[(a)]
+      \item Consider a risk-free asset paying cash flow $C$ at $t+1$, priced
+            today as $P_t = C/(1+r)$. Explain the intuition behind this
+            present value formula. Why are future cash flows discounted, and
+            what does the discount rate represent?
+
+      \item When investing in stocks, what are the two main sources of return?
+
+      \item The Capital Asset Pricing Model (CAPM) gives the required return
+            on stock~$i$ as
+            \[
+              R_i^e = R_f + \beta_i(R_m - R_f).
+            \]
+            What does $(R_m - R_f)$ represent? Why should stocks with higher
+            $\beta$ require higher expected returns?
+
+      \item The Fama--French three-factor model extends CAPM:
+            \[
+              R_i^e = R_f + \beta_i(R_m - R_f) + s_i \cdot SMB + h_i \cdot HML,
+            \]
+            where $SMB > 0$ and $HML > 0$ empirically. Formulate one
+            hypothesis explaining why small firms outperform large firms, and
+            one hypothesis explaining why value firms outperform growth firms.
+            \textit{Hint: consider how value and growth firms perform during
+            economic downturns.}
+    \end{enumerate}
+  },
+  choices   = {},
+  answer    = {},
+  solution  = {%
+    \textbf{(a)} Money has time value: a dollar today can be invested to
+    earn returns, so future cash flows must be discounted to reflect the
+    opportunity cost of waiting. The discount rate $r$ represents the
+    required rate of return --- the compensation investors demand for
+    deferring consumption. For risk-free assets this equals the risk-free
+    rate.
+
+    \textbf{(b)} Dividends (periodic cash distributions) and capital gains
+    (appreciation in share price realised upon sale).
+
+    \textbf{(c)} $(R_m - R_f)$ is the \emph{market risk premium}: the extra
+    return investors demand for bearing systematic market risk. $\beta_i$
+    measures a stock's exposure to systematic risk; since investors are
+    risk-averse, higher-beta stocks must offer higher expected returns to
+    compensate for greater risk.
+
+    \textbf{(d)} \emph{Size premium}: small firms face greater credit,
+    liquidity, and operational risks than large firms, requiring higher
+    returns as compensation. \emph{Value premium}: value firms have
+    short-duration cash flows concentrated in the near term; in recessions
+    these near-term cash flows deteriorate sharply, exposing value investors
+    to higher systematic (cyclical) risk. Investors demand a premium for
+    bearing this downturn risk.
+  },
+}

@@ -1,0 +1,37 @@
+% q0062.tex — The More, the Merrier?
+\question{
+  id        = {0062},
+  title     = {The More, the Merrier?},
+  source    = {OBECON},
+  year      = {2026},
+  round     = {Seletiva IEO -- Phase C},
+  language  = {English},
+  topic     = {Macro},
+  subtopic  = {Real vs Nominal Income},
+  type      = {objective},
+  statement = {%
+    An individual has real income $R_0$ at $t = 0$. Nominal income grows at
+    $s_t\% = t + 5$ per year, while inflation is $\pi_t = t^2 - 25t + 155$.
+    At which value of $t$ is real income $R_t$ maximised?
+  },
+  choices   = {%
+    \item 8.
+    \item 13.
+    \item 17.
+    \item None of the above.
+  },
+  answer    = {D},
+  solution  = {%
+    Real income grows when nominal growth exceeds inflation: $s_t > \pi_t$,
+    i.e.\
+    \[
+      t + 5 > t^2 - 25t + 155 \implies t^2 - 26t + 150 < 0.
+    \]
+    The roots of $t^2 - 26t + 150 = 0$ are $t = 13 \pm \sqrt{19}$, giving
+    approximately $t \approx 8.64$ and $t \approx 17.36$. Real income rises
+    for $t \in (8.64,\, 17.36)$ and falls outside this interval. Since real
+    income is declining for $t < 8.64$ (including all of $t \leq 8$), it
+    peaks at $t = 0$ --- which is not among options~A, B, or~C. \textbf{(D)
+    None of the above} is correct.
+  },
+}

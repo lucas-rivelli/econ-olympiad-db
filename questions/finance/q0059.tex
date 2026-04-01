@@ -1,0 +1,40 @@
+% q0059.tex — Vacation, Financed
+\question{
+  id        = {0059},
+  title     = {Vacation, Financed},
+  source    = {OBECON},
+  year      = {2026},
+  round     = {Seletiva IEO -- Phase C},
+  language  = {English},
+  topic     = {Finance},
+  subtopic  = {Loan Amortization / Annuity},
+  type      = {objective},
+  statement = {%
+    Raphael borrows \$25{,}000 at a 6\% annual interest rate (compounded
+    monthly) to be repaid over 24 monthly instalments. Which of the following
+    statements is correct?
+  },
+  choices   = {%
+    \item Doubling the repayment period reduces the monthly payment by half.
+    \item If the interest rate doubles, the monthly instalment would also
+          double.
+    \item If Raphael had brought Leonardo along (total loan \$37{,}500), the
+          monthly instalment would rise by 50\%.
+    \item If Raphael made more frequent payments, total interest paid would
+          stay the same.
+  },
+  answer    = {C},
+  solution  = {%
+    The annuity payment formula is:
+    \[
+      \text{PMT} = PV \cdot \frac{r(1+r)^n}{(1+r)^n - 1},
+    \]
+    which is \emph{linear} in the principal $PV$. Scaling $PV$ from
+    \$25{,}000 to \$37{,}500 is a 50\% increase, so the monthly payment
+    rises by exactly 50\%, regardless of the interest rate or term. Options~A,
+    B, and~D are incorrect because the non-linear relationship between the
+    interest rate/term and PMT means proportional changes in one do not
+    produce proportional changes in the other, and more frequent payments
+    reduce total interest. (C) is correct.
+  },
+}

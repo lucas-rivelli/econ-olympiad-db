@@ -1,0 +1,35 @@
+% q0049.tex — Do I Take the Bus or the Subway?
+\question{
+  id        = {0049},
+  title     = {Do I Take the Bus or the Subway?},
+  source    = {OBECON},
+  year      = {2026},
+  round     = {Seletiva IEO -- Phase C},
+  language  = {English},
+  topic     = {Micro},
+  subtopic  = {Demand Systems / Perfect Complements},
+  type      = {objective},
+  statement = {%
+    Eduarda's Marshallian demand functions are:
+    \[
+      B = \frac{2m}{2p_B + p_S}, \qquad S = \frac{m}{2p_B + p_S},
+    \]
+    where $B$ denotes bus rides, $S$ subway trips, $m$ income, $p_B$ the price
+    of bus rides, and $p_S$ the price of subway trips. What type of preferences
+    does this demand system represent?
+  },
+  choices   = {%
+    \item Perfect substitutes: $u(B,S) = \alpha B + \beta S$.
+    \item Perfect complements: $u(B,S) = \min\{\alpha B,\, \beta S\}$.
+    \item Cobb-Douglas: $u(B,S) = B^{\alpha} S^{\beta}$.
+    \item Quasi-linear: $u(B,S) = \alpha B + \beta \ln S$.
+  },
+  answer    = {B},
+  solution  = {%
+    The demand ratio $B/S = 2$ is constant regardless of prices or income ---
+    the defining characteristic of perfect complements. This is consistent with
+    $u(B,S) = \min\{B,\, 2S\}$: Eduarda always requires exactly two bus rides
+    per subway trip. The demands are therefore not driven by substitution but
+    by a fixed consumption ratio. (B) is correct.
+  },
+}

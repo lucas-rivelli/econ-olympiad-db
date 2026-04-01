@@ -1,0 +1,42 @@
+% q0058.tex — Stalk and Berg
+\question{
+  id        = {0058},
+  title     = {Stalk and Berg},
+  source    = {OBECON},
+  year      = {2026},
+  round     = {Seletiva IEO -- Phase C},
+  language  = {English},
+  topic     = {Micro},
+  subtopic  = {Industrial Organization / Stackelberg Equilibrium},
+  type      = {objective},
+  statement = {%
+    Leader\&Co ($MC = 2$) moves first, choosing quantity $q_1$. Follower~Inc.\
+    ($MC = 6$) observes $q_1$ and then chooses $q_2$. Market demand is
+    $P = 12 - Q$, where $Q = q_1 + q_2$. What quantity does Leader\&Co
+    produce in Stackelberg equilibrium?
+  },
+  choices   = {%
+    \item 5.
+    \item 6.
+    \item 7.
+    \item None of the above.
+  },
+  answer    = {B},
+  solution  = {%
+    \textbf{Step 1 --- Follower's best response.} Follower maximises
+    $\pi_2 = (12 - q_1 - q_2 - 6)q_2$, giving
+    $q_2^*(q_1) = \max\{(6 - q_1)/2,\, 0\}$.
+    The follower produces only if $q_1 < 6$.\\[4pt]
+    \textbf{Step 2 --- Leader's problem for $q_1 < 6$.}
+    Substituting the best response into the leader's profit:
+    \[
+      \pi_1 = \Bigl(12 - q_1 - \tfrac{6-q_1}{2} - 2\Bigr)q_1
+      = \bigl(7 - \tfrac{q_1}{2}\bigr)q_1.
+    \]
+    The unconstrained optimum is $q_1 = 7$, which violates $q_1 < 6$.\\[4pt]
+    \textbf{Step 3 --- Binding constraint.} Because $\pi_1$ is increasing in
+    $q_1$ for $q_1 < 6$, the constrained optimum is $q_1^* = 6$. At this
+    point the follower produces zero. Leader\&Co produces \textbf{6 units}.
+    (B) is correct.
+  },
+}

@@ -1,0 +1,45 @@
+% q0061.tex — Forecasts for Sale
+\question{
+  id        = {0061},
+  title     = {Forecasts for Sale},
+  source    = {OBECON},
+  year      = {2026},
+  round     = {Seletiva IEO -- Phase C},
+  language  = {English},
+  topic     = {Finance},
+  subtopic  = {Real Options / Value of Information},
+  type      = {objective},
+  statement = {%
+    Rhumb pays \$20M for operating rights today. Next year it must decide
+    whether to invest an additional \$40M (cost of capital 10\%). Two equally
+    likely scenarios: Bull market ($V = \$120$M) or Bear market ($V = \$0$).
+    A consultant offers to provide perfect information about next year's
+    scenario before Rhumb must commit the \$40M. What is the maximum Rhumb
+    should pay for this information?
+  },
+  choices   = {%
+    \item \$18.18 million.
+    \item \$20.00 million.
+    \item \$38.18 million.
+    \item \$54.55 million.
+  },
+  answer    = {A},
+  solution  = {%
+    \textbf{Without information:} Rhumb invests regardless. Expected payoff
+    next year:
+    \[
+      0.5 \times (120 - 40) + 0.5 \times (0 - 40) = 40 - 40 = \$20\text{M}.
+    \]
+    \textbf{With perfect information:} Invest only in the Bull scenario
+    (+\$80M net); walk away in Bear (\$0). Expected payoff:
+    \[
+      0.5 \times 80 + 0.5 \times 0 = \$40\text{M}.
+    \]
+    \textbf{Value of information} (incremental expected payoff): $40 - 20 =
+    \$20$M, received next year. Discounted to today:
+    \[
+      \frac{\$20\text{M}}{1.10} \approx \$18.18\text{M}.
+    \]
+    (A) is correct.
+  },
+}

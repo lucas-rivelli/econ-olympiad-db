@@ -1,0 +1,97 @@
+% q0029.tex — Music or Noise?
+\question{
+  id        = {0029},
+  title     = {Music or Noise?},
+  source    = {OBECON},
+  year      = {2026},
+  round     = {Seletiva IEO -- Phase B},
+  language  = {English},
+  topic     = {Micro},
+  subtopic  = {Externalities / Social Welfare},
+  type      = {dissertative},
+  statement = {%
+    Lucas likes to play music, but noise bothers his community --- even
+    though they appreciate some amount of music. Every day, he chooses a
+    proportion of the day to spend playing music, keeping the rest silent.
+    His utility function is
+    \[
+      u(s,m) = 1 - (s^2 + m^2),
+    \]
+    where $s \in [0,1]$ is the proportion of the day spent in silence and
+    $m \in [0,1]$ is the proportion spent playing music. Because time is
+    split between silence and music:
+    \[
+      s + m = 1.
+    \]
+
+    \begin{enumerate}[(a)]
+      \item (20 points) Without any intervention, what proportion of music
+            $m^*$ does Lucas choose?
+
+      \item (30 points) The community's utility function is
+            \[
+              U(s,m) = 1 - (s^2 + 3m^2),
+            \]
+            reflecting that the community values silence more than music.
+            \begin{enumerate}[(i)]
+              \item Calculate the proportion of music $m_c$ the community
+                    would like Lucas to play. Explain why it differs from
+                    $m^*$.
+              \item Is $(s_c, m_c)$ Pareto efficient? Identify \emph{all}
+                    values of $m$ that constitute Pareto efficient allocations.
+            \end{enumerate}
+
+      \item (20 points) Find the socially optimal allocation $(s_s, m_s)$
+            that maximises the unweighted aggregate welfare
+            $W = u(s,m) + U(s,m)$.
+
+      \item (30 points) The community decides Lucas's music proportion should
+            be lower. Knowing his utility is measured in dollars, elaborate
+            and describe \textbf{two mechanisms} that could induce him to
+            decrease his choice of $m$ and explain how each alters his
+            incentives.
+    \end{enumerate}
+  },
+  choices   = {},
+  answer    = {},
+  solution  = {%
+    \textbf{(a)} Substituting $s = 1-m$:
+    \[
+      u = 1 - (1-m)^2 - m^2 = -2m^2 + 2m.
+    \]
+    First-order condition: $-4m + 2 = 0 \Rightarrow m^* = \tfrac{1}{2}$.
+
+    \textbf{(b.i)}
+    \[
+      U = 1 - (1-m)^2 - 3m^2 = -4m^2 + 2m.
+    \]
+    F.O.C.: $m_c = \tfrac{1}{4}$. Lucas plays more music than the community
+    prefers because he does not internalise the negative noise externality
+    he imposes ($U = u - 2m^2$, where $-2m^2$ is the community's noise
+    disutility).
+
+    \textbf{(b.ii)} $(s_c, m_c) = (\tfrac{3}{4}, \tfrac{1}{4})$ is Pareto
+    efficient. All $m \in [\tfrac{1}{4}, \tfrac{1}{2}]$ are Pareto
+    efficient: for $m < \tfrac{1}{4}$ both utilities increase if $m$
+    rises; for $m > \tfrac{1}{2}$ both decrease if $m$ rises; in between,
+    one utility rises and the other falls.
+
+    \textbf{(c)}
+    \[
+      W = u + U = -6m^2 + 4m.
+    \]
+    F.O.C.: $m_s = \tfrac{1}{3}$, $s_s = \tfrac{2}{3}$.
+
+    \textbf{(d)} Two possible mechanisms:
+    \begin{itemize}
+      \item \textbf{Pigouvian tax}: charge Lucas a tax of $t$ per unit of
+            music played (e.g.\ on $m - \tfrac{1}{4}$ when $m \ge
+            \tfrac{1}{4}$). This raises the marginal private cost of music,
+            internalising the noise externality.
+      \item \textbf{Silence subsidy}: pay Lucas $\sigma$ per unit of silence
+            (e.g.\ on $s > \tfrac{3}{4}$). This increases the marginal
+            private benefit of silence, making music relatively less
+            attractive.
+    \end{itemize}
+  },
+}

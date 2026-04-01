@@ -1,0 +1,34 @@
+% q0046.tex — When Ceteris Isn't Paribus
+\question{
+  id        = {0046},
+  title     = {When Ceteris Isn't Paribus},
+  source    = {OBECON},
+  year      = {2026},
+  round     = {Seletiva IEO -- Phase C},
+  language  = {English},
+  topic     = {Micro},
+  subtopic  = {Econometrics / Selection Bias},
+  type      = {objective},
+  statement = {%
+    A researcher compares wages: training programme participants earn \$24/hr
+    vs.\ non-participants at \$18/hr, concluding the programme adds \$6/hr.
+    However, 60\% of participants hold high school diplomas compared to 20\%
+    of non-participants, and a diploma independently adds \$5/hr to wages.
+    What is the actual programme effect on wages?
+  },
+  choices   = {%
+    \item \$2/hr.
+    \item \$4/hr.
+    \item \$8/hr.
+    \item It is not possible to determine the true value.
+  },
+  answer    = {B},
+  solution  = {%
+    Controlling for diploma composition: among participants without a diploma
+    (40\%), expected wage $= 24 - 0.6 \times 5 = \$21$/hr. Among
+    non-participants without a diploma (80\%), expected wage
+    $= 18 - 0.2 \times 5 = \$17$/hr. The pure training effect is
+    $21 - 17 = \$4$/hr. The remaining \$2 of the raw \$6 gap is attributable
+    to selection bias (diploma endowment). (B) is correct.
+  },
+}

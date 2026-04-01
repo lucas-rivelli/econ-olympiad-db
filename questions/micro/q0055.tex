@@ -1,0 +1,35 @@
+% q0055.tex — Is Second-Bid Actually Mid?
+\question{
+  id        = {0055},
+  title     = {Is Second-Bid Actually Mid?},
+  source    = {OBECON},
+  year      = {2026},
+  round     = {Seletiva IEO -- Phase C},
+  language  = {English},
+  topic     = {Micro},
+  subtopic  = {Auction Theory / Second-Price Auction},
+  type      = {objective},
+  statement = {%
+    In a second-price sealed-bid (Vickrey) auction, the highest bidder wins
+    the item but pays only the second-highest bid submitted. Which of the
+    following statements is correct?
+  },
+  choices   = {%
+    \item For player $i$, submitting a bid equal to valuation $v_i$ is
+          strictly dominant over bidding higher.
+    \item Each player submitting their true valuation is a Nash Equilibrium.
+    \item A Nash Equilibrium exists only if players have beliefs about others'
+          valuations.
+    \item When everyone bids truthfully, the item may not go to the player
+          who values it most.
+  },
+  answer    = {B},
+  solution  = {%
+    Bidding $v_i$ is \emph{weakly} dominant (not strictly dominant, due to
+    the possibility of ties). The symmetric profile in which every player bids
+    their true valuation is a Nash Equilibrium and does not require players to
+    form beliefs about opponents' valuations --- it holds regardless of what
+    others do. Under truthful bidding, the player with the highest valuation
+    always wins, ensuring allocative efficiency. (B) is correct.
+  },
+}

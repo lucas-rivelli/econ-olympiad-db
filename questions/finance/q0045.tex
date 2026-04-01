@@ -1,0 +1,35 @@
+% q0045.tex — Combining Forces
+\question{
+  id        = {0045},
+  title     = {Combining Forces},
+  source    = {OBECON},
+  year      = {2026},
+  round     = {Seletiva IEO -- Phase C},
+  language  = {English},
+  topic     = {Finance},
+  subtopic  = {NPV / IRR Profiles},
+  type      = {objective},
+  statement = {%
+    NPV profiles for Projects~F and~G show the following: Project~F has a
+    positive NPV at all discount rates (NPV declines as the rate rises).
+    Project~G starts positive at a 0\% discount rate, crosses zero NPV at
+    10\%, and becomes negative thereafter. At a 15\% discount rate,
+    NPV(F) = +\$10M and NPV(G) = $-$\$10M. What can be concluded?
+  },
+  choices   = {%
+    \item Only Project~F should be undertaken at any cost of capital below
+          20\%.
+    \item Both projects should be undertaken if the cost of capital is below
+          15\%.
+    \item If the projects were mutually exclusive, Project~G adoption would
+          depend on the cost of capital.
+    \item The joint realisation of both projects has an IRR of 15\%.
+  },
+  answer    = {D},
+  solution  = {%
+    At a 15\% discount rate: NPV(F) = +\$10M and NPV(G) = $-$\$10M, so
+    NPV(F + G) = \$0. This means 15\% is exactly the IRR of the combined
+    portfolio --- the rate at which undertaking both projects simultaneously
+    yields zero net present value. (D) is correct.
+  },
+}
