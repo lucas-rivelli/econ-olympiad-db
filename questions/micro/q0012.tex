@@ -25,8 +25,23 @@
     \item $100\%$
     \item $200\%$
   },
-  answer    = {},
+  answer    = {B},
   solution  = {%
-    % TODO: add solution
+    Halving every firm's MC is equivalent to replacing $2^i$ with
+    $2^{i-1} = 2^{(i-1)}$, i.e.\ shifting the index by $-1$. Since $i$
+    ranges over all integers $\mathbb{Z}$, the set of marginal costs
+    $\{2^i : i \in \mathbb{Z}\}$ is \emph{identical} before and after the
+    shift (the set is unchanged; only the labeling shifts).
+
+    Because the market structure --- the distribution of MCs across the
+    infinite set of firms and the demand curve --- is identical before and
+    after, the Cournot equilibrium (prices, quantities, profits) is
+    \textbf{unchanged}.
+
+    With infinitely many Cournot competitors whose MCs span $(0, \infty)$,
+    the market approaches perfect competition with $P \to 0$, $\pi \to 0$
+    regardless. The innovation leaves joint profit at 0 both before and after.
+
+    Change in joint profit: $\mathbf{0\%}$. Answer: \textbf{(B)}.
   },
 }

@@ -10,25 +10,16 @@
   subtopic  = {Fixed Income / Bond Duration},
   type      = {objective},
   statement = {%
-    Fernando is a risk-averse investor concerned about interest rate risk in
-    his government bond portfolio. He is evaluating two 10-year government
-    bonds with identical face values and yields: Bond~A (a coupon-paying bond)
-    and Bond~B (a zero-coupon bond).
-
-    Duration is a measure of how sensitive a bond's price is to changes in
-    interest rates. For small changes $\Delta$ in the yield $y$, duration can
-    be approximated as:
+    Fernando is a risk-averse investor evaluating two 10-year government bonds
+    with identical face values and yields: Bond~A (coupon-paying) and Bond~B
+    (zero-coupon). Duration approximates interest rate sensitivity:
     \[
       \text{Duration} \approx -\frac{1}{P} \cdot \frac{\Delta P}{\Delta y}
     \]
-    where $P$ is the bond's price, $\Delta P$ is the change in price when the
-    yield changes by $\Delta y$, and the negative sign indicates that bond
-    prices move inversely to interest rates. A higher duration means that the
-    bond's price is more sensitive to interest rate movements. Duration also
-    reflects the timing of the bond's cash flows.
+    A higher duration means greater price sensitivity to rate changes.
 
-    If Fernando wants to minimize his exposure to interest rate risk (reduce
-    price sensitivity), which bond should he choose?
+    If Fernando wants to minimize interest rate risk, which bond should he
+    choose?
   },
   choices   = {%
     \item Bond~A, even though coupon-paying bonds have higher duration than
@@ -42,8 +33,23 @@
     \item Both bonds have identical interest rate risk since they have the
           same maturity.
   },
-  answer    = {},
+  answer    = {B},
   solution  = {%
-    % TODO: add solution
+    \textbf{Key fact:} For bonds of the same maturity, a coupon-paying bond
+    has \emph{lower} Macaulay duration than a zero-coupon bond.
+
+    \textbf{Why?} Duration is the weighted average time to receive cash flows.
+    A coupon bond pays cash throughout its life (earlier coupons pull the
+    weighted average down), while a zero-coupon bond pays everything at
+    maturity. Therefore:
+    \[
+      D_\text{coupon} < D_\text{zero} = \text{maturity} = 10 \text{ years}
+    \]
+
+    Fernando wants to \emph{minimize} duration~$\Rightarrow$ choose the bond
+    with \textbf{lower duration}~$\Rightarrow$ \textbf{Bond~A} (coupon-paying).
+
+    Option (E) is wrong: same maturity $\neq$ same duration.
+    Answer: \textbf{(B)}.
   },
 }

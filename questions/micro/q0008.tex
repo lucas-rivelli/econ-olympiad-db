@@ -35,8 +35,24 @@
     \item 100
     \item Forever
   },
-  answer    = {},
+  answer    = {C},
   solution  = {%
-    % TODO: add solution
+    In year $t$, company $i$ charges $i^t$. The subsidy equals some $k^t$
+    (for a randomly chosen company $k$). We need $a^t + b^t = k^t$ for
+    some $a, b, k \in \{1, \ldots, 100\}$.
+
+    \begin{itemize}
+      \item \textbf{Year $t=1$:} We need $a + b = k$. Many solutions exist,
+            e.g.\ $3 + 5 = 8$. \textbf{Possible.}
+      \item \textbf{Year $t=2$:} We need $a^2 + b^2 = k^2$ (Pythagorean
+            triples). Solutions exist, e.g.\ $3^2 + 4^2 = 5^2 = 25$, and
+            $3, 4, 5 \leq 100$. \textbf{Possible.}
+      \item \textbf{Year $t \geq 3$:} By Fermat's Last Theorem, there are
+            \emph{no} positive integer solutions to $a^t + b^t = c^t$.
+            \textbf{Impossible.}
+    \end{itemize}
+
+    Therefore, it is possible in exactly \textbf{2 years} ($t=1$ and $t=2$).
+    Answer: \textbf{(C)}.
   },
 }

@@ -39,8 +39,37 @@
     \item (Down, Right).
     \item There is no Nash Equilibrium in this game.
   },
-  answer    = {},
+  answer    = {A},
   solution  = {%
-    % TODO: add solution
+    Ana believes Bob has altruistic preferences, so she thinks Bob's utility
+    is $U_\text{Bob} = \pi_\text{Bob} + \pi_\text{Ana}$.
+    Ana re-evaluates Bob's payoffs accordingly:
+
+    \begin{center}
+    \begin{tabular}{c|cc}
+            & Left & Right \\
+      \hline
+      Up    & $6+6=12$ & $10+0=10$ \\
+      Down  & $0+4=4$  & $1+1=2$   \\
+    \end{tabular}
+    \end{center}
+
+    From Ana's perspective (believing Bob is altruistic):
+    \begin{itemize}
+      \item If Ana plays \textit{Up}: Bob prefers Left ($12 > 10$).
+      \item If Ana plays \textit{Down}: Bob prefers Left ($4 > 2$).
+    \end{itemize}
+    $\Rightarrow$ Bob's dominant strategy (as Ana believes) is \textbf{Left}.
+
+    Knowing Bob will play Left, Ana compares:
+    \begin{itemize}
+      \item Up + Left: Ana gets $\mathbf{6}$
+      \item Down + Left: Ana gets $4$
+    \end{itemize}
+    $\Rightarrow$ Ana plays \textbf{Up}.
+
+    Outcome: \textbf{(Up, Left)}. Note that in reality Bob would play Right
+    (dominant strategy for the real payoffs), but Ana was deceived.
+    Answer: \textbf{(A)}.
   },
 }

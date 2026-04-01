@@ -1,4 +1,4 @@
-% q0022.tex — American Dream (Mortgage / TVM)
+% q0022.tex — American Dream (Mortgage)
 \question{
   id        = {0022},
   title     = {American Dream},
@@ -22,11 +22,28 @@
     \item \$3,000
     \item \$3,600
   },
-  answer    = {},
+  answer    = {C},
   solution  = {%
-    % TODO: add solution
-    % Loan = 500000*0.8 = 400000
-    % Monthly rate r = 0.06/12 = 0.005, n = 360 months
-    % PMT = PV * r / (1 - (1+r)^{-n})
+    \textbf{Loan amount:} $PV = 500{,}000 \times (1 - 0.20) = \$400{,}000$
+
+    \textbf{Parameters:} monthly rate $r = 6\%/12 = 0.5\% = 0.005$;
+    $n = 30 \times 12 = 360$ payments.
+
+    \textbf{Annuity formula:}
+    \[
+      \text{PMT} = PV \cdot \frac{r}{1-(1+r)^{-n}}
+      = 400{,}000 \cdot \frac{0.005}{1 - (1.005)^{-360}}
+    \]
+
+    $(1.005)^{360} \approx 6.023$, so $(1.005)^{-360} \approx 0.1660$.
+
+    \[
+      \text{PMT} = 400{,}000 \cdot \frac{0.005}{1 - 0.1660}
+      = 400{,}000 \cdot \frac{0.005}{0.8340}
+      \approx 400{,}000 \times 0.005995
+      \approx \mathbf{\$2{,}398}
+    \]
+
+    Closest answer: \textbf{\$2,400}. Answer: \textbf{(C)}.
   },
 }

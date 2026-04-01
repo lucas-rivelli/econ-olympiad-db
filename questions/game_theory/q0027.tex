@@ -1,4 +1,4 @@
-% q0027.tex — Follow the leader (Stackelberg vs Cournot) [Numeric Answer]
+% q0027.tex — Follow the leader [Numeric]
 \question{
   id        = {0027},
   title     = {Follow the Leader},
@@ -10,36 +10,52 @@
   subtopic  = {Industrial Organization / Stackelberg vs Cournot},
   type      = {numeric},
   statement = {%
-    Two oil companies, $A$ and $B$, initially compete in a duopoly under
-    Cournot competition. To reduce the negative externalities of oil
-    production, the government introduces a new policy that changes the market
-    structure: in each period, firms compete following the Stackelberg model,
-    with one firm acting as the leader and the other as the follower. Firm~$A$
-    will be the leader in the first period. Then, leadership rotates according
-    to the following rule: the firm producing the \emph{smaller quantity} in a
-    given period becomes the leader in the next period (if they produce the
-    same quantity, the previous follower becomes the next leader). Production
-    quantities must be non-negative integers.
+    Two oil companies compete in a Stackelberg duopoly (rotating leadership)
+    where the firm producing less becomes leader next period. Firm~A leads in
+    period 1. Market demand: $Q = 360 - p$; both firms have $MC = 120$, no
+    fixed costs; interest rate 20\%. No collusion; game is infinite-horizon.
 
-    The market demand is given by $Q = 360 - p$. Firms $A$ and $B$ both have
-    constant marginal costs of 120, with no fixed costs. The interest rate is
-    20\%. Both firms are rational, the game extends over an infinite horizon,
-    and firms never cooperate or collude (no strategies contingent on past
-    actions).
-
-    The government wishes to assess whether this policy effectively reduces
-    total production. Considering the total output produced over the next 10
-    years under this new policy, what is the difference compared to the output
-    that would arise over the same horizon if the firms remained in Cournot
-    competition?
-
-    Give the value of $(S_A + S_B) - (C_A + C_B)$, where $S_i$ is the output
-    of firm~$i$ in the next 10 years under the new rule, and $C_i$ is the
-    output of firm~$i$ under Cournot competition.
+    Find $(S_A + S_B) - (C_A + C_B)$ over 10 years, where $S_i$ is firm~$i$'s
+    total output under the new rule and $C_i$ under Cournot.
   },
   choices   = {},
-  answer    = {},
+  answer    = {200},
   solution  = {%
-    % TODO: add solution
+    \textbf{Cournot equilibrium:}\\
+    Profit: $\pi_i = (240 - q_i - q_j)q_i$; FOC: $240 - 2q_i - q_j = 0$.\\
+    Symmetric: $q^C = 80$ each, $Q^C = 160$.\\
+    Over 10 periods: $C_A = C_B = 800$, so $C_A + C_B = 1{,}600$.
+
+    \textbf{Stackelberg equilibrium:}\\
+    Follower BR: $q_F = \dfrac{240 - q_L}{2}$.\\
+    Leader: $\max (240 - q_L - q_F)q_L = \max \dfrac{240 - q_L}{2} q_L$.\\
+    FOC: $q_L^S = 120$; $q_F^S = 60$.
+
+    \textbf{Leadership rotation:}\\
+    Period 1: A leads ($q_A=120$, $q_B=60$). B produces less $\Rightarrow$
+    B leads next.\\
+    Period 2: B leads ($q_B=120$, $q_A=60$). A produces less $\Rightarrow$
+    A leads next.\\
+    Pattern alternates every period.
+
+    Over 10 periods (A leads in 1,3,5,7,9; B leads in 2,4,6,8,10):
+    \[
+      S_A = 5 \times 120 + 5 \times 60 = 600 + 300 = 900
+    \]
+    \[
+      S_B = 5 \times 60 + 5 \times 120 = 300 + 600 = 900
+    \]
+    \[
+      S_A + S_B = 1{,}800
+    \]
+
+    \textbf{Difference:}
+    \[
+      (S_A + S_B) - (C_A + C_B) = 1{,}800 - 1{,}600 = \mathbf{200}
+    \]
+
+    The rotating-Stackelberg policy \emph{increases} total output (closer to
+    competitive level), which was the government's goal to reduce market
+    power externalities.
   },
 }

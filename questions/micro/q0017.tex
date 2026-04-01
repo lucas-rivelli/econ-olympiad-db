@@ -1,4 +1,4 @@
-% q0017.tex — Cushioning the Fall (Progressive Taxation / Public Finance)
+% q0017.tex — Cushioning the Fall (Progressive Taxation)
 \question{
   id        = {0017},
   title     = {Cushioning the Fall},
@@ -10,20 +10,16 @@
   subtopic  = {Public Finance / Progressive Taxation},
   type      = {objective},
   statement = {%
-    Consider an economy with a progressive income tax system where individuals
-    pay:
+    Consider an economy with a progressive income tax system:
     \begin{itemize}
       \item 10\% on income up to \$50,000
       \item 25\% on income between \$50,000 and \$100,000
       \item 40\% on income above \$100,000
     \end{itemize}
+    The economy has 1,000 individuals: 500 earning \$80,000 and 500 earning
+    \$120,000. During a recession, everyone's income falls by \$40,000.
 
-    Suppose the economy consists of 1,000 individuals, half earning \$80,000
-    and half earning \$120,000. During a recession, everyone's income falls
-    by exactly \$40,000.
-
-    What is the tax revenue as a share of total income before and after the
-    recession?
+    What is the tax revenue as a share of total income before and after?
   },
   choices   = {%
     \item Before: 22.25\%, After: 22.25\%
@@ -32,8 +28,34 @@
     \item Before: 19.00\%, After: 19.00\%
     \item Before: 19.00\%, After: 13.75\%
   },
-  answer    = {},
+  answer    = {E},
   solution  = {%
-    % TODO: add solution
+    \textbf{Before recession:}
+    \begin{itemize}
+      \item Earner at \$80,000: tax $= 0.10 \times 50{,}000 + 0.25 \times
+            30{,}000 = 5{,}000 + 7{,}500 = \$12{,}500$
+      \item Earner at \$120,000: tax $= 0.10 \times 50{,}000 + 0.25 \times
+            50{,}000 + 0.40 \times 20{,}000 = 5{,}000 + 12{,}500 + 8{,}000
+            = \$25{,}500$
+    \end{itemize}
+    Total income $= 500 \times 80{,}000 + 500 \times 120{,}000 =
+    \$100{,}000{,}000$\\
+    Total tax $= 500 \times 12{,}500 + 500 \times 25{,}500 =
+    \$19{,}000{,}000$\\
+    Tax share $= 19{,}000{,}000 / 100{,}000{,}000 = \mathbf{19.00\%}$
+
+    \textbf{After recession} (incomes fall by \$40,000):
+    \begin{itemize}
+      \item Earner at \$40,000: tax $= 0.10 \times 40{,}000 = \$4{,}000$
+      \item Earner at \$80,000: tax $= 0.10 \times 50{,}000 + 0.25 \times
+            30{,}000 = \$12{,}500$
+    \end{itemize}
+    Total income $= 500 \times 40{,}000 + 500 \times 80{,}000 =
+    \$60{,}000{,}000$\\
+    Total tax $= 500 \times 4{,}000 + 500 \times 12{,}500 = \$8{,}250{,}000$\\
+    Tax share $= 8{,}250{,}000 / 60{,}000{,}000 = \mathbf{13.75\%}$
+
+    The progressive system automatically reduces the tax burden in a
+    recession (automatic stabilizer). Answer: \textbf{(E)}.
   },
 }

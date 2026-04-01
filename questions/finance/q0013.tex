@@ -12,18 +12,16 @@
   statement = {%
     Consider two investment options:
     \begin{enumerate}
-      \item An investment that offers \textbf{simple interest} at a rate $r$,
-            given by $A_s = P(1 + rt)$
-      \item An investment that offers \textbf{compound interest} at a rate $r$,
-            given by $A_c = P(1+r)^t$
+      \item An investment that offers \textbf{simple interest} at rate $r$:
+            $A_s = P(1 + rt)$
+      \item An investment that offers \textbf{compound interest} at rate $r$:
+            $A_c = P(1+r)^t$
     \end{enumerate}
-    where $A$ is the accumulated amount after $t$ years, $P$ is the principal,
-    $r$ is the annual interest rate (decimal), and $t$ is the time in years.
+    where $A$ is the accumulated amount, $P$ is the principal, $r$ is the
+    annual rate (decimal), and $t$ is the time in years.
 
-    Carlos and Frederico are both offered these two investment options. Carlos
-    invests \$1,000 in the compound interest option, while Frederico invests
-    \$1,000 in the simple interest option. Everything else constant, what can
-    we assume about their investment decisions?
+    Carlos invests \$1,000 in the compound option; Frederico invests \$1,000
+    in the simple option. What can we assume about their decisions?
   },
   choices   = {%
     \item Carlos made the optimal choice, as compound interest always yields
@@ -36,8 +34,22 @@
           difference between simple and compound interest diminishes over time.
     \item Both options will yield the same return after $\dfrac{P}{r}$ years.
   },
-  answer    = {},
+  answer    = {C},
   solution  = {%
-    % TODO: add solution
+    Compare $A_s = P(1+rt)$ and $A_c = P(1+r)^t$:
+    \begin{itemize}
+      \item At $t = 0$: both equal $P$.
+      \item At $t = 1$: $A_s = P(1+r) = A_c$. \textbf{Equal.}
+      \item For $0 < t < 1$: $(1+r)^t < 1 + rt$ by concavity of power
+            function~$\Rightarrow$ \textbf{simple interest is higher}.
+            (Frederico does better for short-term investments.)
+      \item For $t > 1$: $(1+r)^t > 1 + rt$~$\Rightarrow$
+            \textbf{compound interest is higher}.
+            (Carlos does better for long-term investments.)
+    \end{itemize}
+
+    Therefore, neither choice is universally optimal; it depends on the
+    investment duration. Both may have made the correct decision.
+    Answer: \textbf{(C)}.
   },
 }

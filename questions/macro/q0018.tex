@@ -10,12 +10,11 @@
   subtopic  = {Labor Markets / Steady-State Unemployment},
   type      = {objective},
   statement = {%
-    In a labor market, let $f$ be the \emph{job-finding rate}, the probability
-    that an unemployed person finds a job, and $s$ be the
-    \emph{job separation rate}, the probability that an employed person loses
-    their job. Both rates are constant over time.
+    In a labor market, let $f$ be the \emph{job-finding rate} (probability an
+    unemployed person finds a job) and $s$ be the \emph{job separation rate}
+    (probability an employed person loses their job). Both rates are constant.
 
-    What is the steady-state unemployment rate in this economy?
+    What is the steady-state unemployment rate?
   },
   choices   = {%
     \item $u^* = \dfrac{f}{f+s}$
@@ -24,8 +23,21 @@
     \item $u^* = s \cdot f$
     \item $u^* = \dfrac{1}{s+f}$
   },
-  answer    = {},
+  answer    = {B},
   solution  = {%
-    % TODO: add solution
+    At steady state, flows \emph{into} unemployment equal flows \emph{out}
+    of unemployment:
+    \[
+      \underbrace{s \cdot (1 - u^*)}_{\text{employed} \to \text{unemployed}}
+      = \underbrace{f \cdot u^*}_{\text{unemployed} \to \text{employed}}
+    \]
+    Solving for $u^*$:
+    \[
+      s - s u^* = f u^* \implies s = u^*(f + s)
+      \implies \boxed{u^* = \frac{s}{s + f}}
+    \]
+
+    Intuition: a higher separation rate $s$ raises unemployment; a higher
+    job-finding rate $f$ lowers it. Answer: \textbf{(B)}.
   },
 }

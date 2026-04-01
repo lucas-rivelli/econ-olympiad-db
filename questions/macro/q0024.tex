@@ -1,4 +1,4 @@
-% q0024.tex — Fed Fights Foreign Forces (Balance of Payments / Exchange Rate) [Numeric]
+% q0024.tex — Fed Fights Foreign Forces [Numeric]
 \question{
   id        = {0024},
   title     = {Fed Fights Foreign Forces},
@@ -10,26 +10,37 @@
   subtopic  = {Balance of Payments / Exchange Rate},
   type      = {numeric},
   statement = {%
-    Consider a small open economy where the current account is given by
-    $CA = 200 - 50e$, with $e$ representing the exchange rate in USD per
-    domestic currency. The capital account is defined as
-    $KA = 100(i - i^*)$, where $i$ is the domestic interest rate and $i^*$
-    is the foreign interest rate, both expressed in percentage points.
+    Consider a small open economy where $CA = 200 - 50e$ and
+    $KA = 100(i - i^*)$, with $e$ the exchange rate (USD per domestic
+    currency). Initially $i = 8\%$, $i^* = 4\%$. The foreign rate rises to
+    $i^* = 6\%$; the central bank keeps $i = 8\%$.
 
-    Initially, the domestic interest rate is $i = 8\%$ and the foreign
-    interest rate is $i^* = 4\%$. Suppose now that the foreign interest rate
-    rises to $i^* = 6\%$ while the central bank holds the domestic interest
-    rate steady. Calculate what is the equilibrium exchange rate variation in
-    USD per domestic currency to maintain balance of payments equilibrium.
-
-    Give the value of $e_\text{new} - e_\text{old}$, where $e_\text{old}$
-    is the exchange rate before the increase in foreign interest rate and
-    $e_\text{new}$ is the rate after the increase. Round to the nearest
-    integer; if the fractional part is 0.5, round to the nearest even integer.
+    Find $e_\text{new} - e_\text{old}$ to maintain BOP equilibrium
+    ($CA + KA = 0$). Round to nearest integer; if 0.5, round to even.
   },
   choices   = {},
-  answer    = {},
+  answer    = {-4},
   solution  = {%
-    % TODO: add solution
+    \textbf{BOP equilibrium condition:} $CA + KA = 0$, i.e.\
+    $200 - 50e + 100(i - i^*) = 0$.
+
+    \textbf{Before} ($i^* = 4\%$):
+    \[
+      200 - 50e + 100(8 - 4) = 0 \implies 600 = 50e \implies e_\text{old} = 12
+    \]
+
+    \textbf{After} ($i^* = 6\%$):
+    \[
+      200 - 50e + 100(8 - 6) = 0 \implies 400 = 50e \implies e_\text{new} = 8
+    \]
+
+    \[
+      e_\text{new} - e_\text{old} = 8 - 12 = \mathbf{-4}
+    \]
+
+    Intuition: a higher foreign rate makes domestic assets relatively less
+    attractive, reducing capital inflows ($KA$ falls). To restore BOP
+    equilibrium, the domestic currency must \emph{depreciate} ($e$ falls,
+    since $e$ is USD per domestic unit). Answer: $\mathbf{-4}$.
   },
 }

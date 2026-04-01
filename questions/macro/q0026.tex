@@ -1,4 +1,4 @@
-% q0026.tex — Matthew 14:13-21 (Money Multiplier + Fiscal Multiplier) [Numeric]
+% q0026.tex — Matthew 14:13-21 [Numeric]
 \question{
   id        = {0026},
   title     = {Matthew 14:13--21},
@@ -10,28 +10,34 @@
   subtopic  = {Monetary Policy / Money Multiplier},
   type      = {numeric},
   statement = {%
-    A fractional-reserve banking system operates with a required reserve ratio
-    of 20\%. The central bank purchases government securities in the open
-    market, injecting \$400 million of new reserves into the banking system.
+    A fractional-reserve banking system has a required reserve ratio of 20\%.
+    The central bank injects \$400 million of new reserves via open market
+    operations. Banks lend all excess reserves; no currency leakages.
+    Households' MPC = 0.6.
 
-    Assume banks lend out all excess reserves and there are no currency
-    leakages. In this economy, households consume 60 cents of every additional
-    dollar of income.
-
-    Calculate the total change in GDP in million dollars resulting from this
-    monetary injection.
-
-    Give the answer as a number rounded to the nearest integer. If the
-    fractional part is 0.5, round to the nearest even integer. The answer is
-    in million dollars.
+    Calculate the total change in GDP (in \$ millions). Round to nearest
+    integer; if 0.5, round to even.
   },
   choices   = {},
-  answer    = {},
+  answer    = {5000},
   solution  = {%
-    % TODO: add solution
-    % Money multiplier = 1/0.20 = 5
-    % New money = 400 * 5 = 2000 million
-    % Fiscal multiplier = 1/(1-MPC) = 1/0.4 = 2.5
-    % Delta GDP = 2000 * 2.5 = 5000 million
+    \textbf{Step 1 --- Money multiplier:}
+    \[
+      m = \frac{1}{\text{reserve ratio}} = \frac{1}{0.20} = 5
+    \]
+    New money supply $= \$400\text{M} \times 5 = \$2{,}000\text{M}$.
+
+    \textbf{Step 2 --- Spending/fiscal multiplier:}
+    \[
+      k = \frac{1}{1 - \text{MPC}} = \frac{1}{1 - 0.6} = \frac{1}{0.4} = 2.5
+    \]
+
+    \textbf{Step 3 --- Total change in GDP:}
+    \[
+      \Delta Y = 2{,}000 \times 2.5 = \mathbf{\$5{,}000\text{ million}}
+    \]
+
+    The biblical reference (Matthew 14: feeding 5,000 with a few loaves)
+    alludes to the multiplier effect ``multiplying'' the initial injection.
   },
 }
