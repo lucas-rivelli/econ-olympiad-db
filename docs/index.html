@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Econ Olympiad Question Database</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { skipHtmlTags: ['script','noscript','style','textarea'] }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+</head>
+<body>
+
+<!-- ── Header ─────────────────────────────────────────────────────────────── -->
+<header>
+  <div class="header-inner">
+    <div class="header-title">
+      <span class="header-icon">📐</span>
+      <div>
+        <h1>Econ Olympiad DB</h1>
+        <p>OBECON · IEO · CEO · REO · NET · NOIC</p>
+      </div>
+    </div>
+    <div id="stats" class="stats"></div>
+  </div>
+</header>
+
+<!-- ── Controls ───────────────────────────────────────────────────────────── -->
+<div class="controls">
+  <div class="search-wrap">
+    <span class="search-icon">🔍</span>
+    <input type="text" id="search" placeholder="Search questions, topics, subtopics…">
+    <button id="clear-search" class="btn-icon" title="Clear">✕</button>
+  </div>
+  <div class="filters">
+    <select id="filter-source"><option value="">All Sources</option></select>
+    <select id="filter-topic"><option value="">All Topics</option></select>
+    <select id="filter-year"><option value="">All Years</option></select>
+    <select id="filter-type"><option value="">All Types</option></select>
+    <button id="reset-filters" class="btn-secondary">Reset</button>
+  </div>
+</div>
+
+<!-- ── Active filters ─────────────────────────────────────────────────────── -->
+<div id="active-filters" class="active-filters"></div>
+
+<!-- ── Table ──────────────────────────────────────────────────────────────── -->
+<div class="table-wrap">
+  <table id="q-table">
+    <thead>
+      <tr>
+        <th data-col="id" class="sortable">ID <span class="sort-arrow">↕</span></th>
+        <th data-col="title" class="sortable">Title <span class="sort-arrow">↕</span></th>
+        <th data-col="source" class="sortable">Source <span class="sort-arrow">↕</span></th>
+        <th data-col="year" class="sortable">Year <span class="sort-arrow">↕</span></th>
+        <th data-col="topic" class="sortable">Topic <span class="sort-arrow">↕</span></th>
+        <th>Subtopic</th>
+        <th data-col="type" class="sortable">Type <span class="sort-arrow">↕</span></th>
+        <th>Answer</th>
+      </tr>
+    </thead>
+    <tbody id="q-body"></tbody>
+  </table>
+  <div id="no-results" class="no-results hidden">No questions match your filters.</div>
+</div>
+<div id="count-bar" class="count-bar"></div>
+
+<!-- ── Modal ──────────────────────────────────────────────────────────────── -->
+<div id="modal-overlay" class="modal-overlay hidden" role="dialog" aria-modal="true">
+  <div class="modal">
+    <button id="modal-close" class="modal-close" aria-label="Close">✕</button>
+    <div id="modal-meta" class="modal-meta"></div>
+    <div class="modal-body">
+      <div class="section-label">Question</div>
+      <div id="modal-statement" class="modal-statement"></div>
+      <div id="modal-choices" class="modal-choices"></div>
+      <div class="modal-toggles">
+        <button id="toggle-answer" class="btn-toggle">Show Answer</button>
+        <button id="toggle-solution" class="btn-toggle">Show Solution</button>
+      </div>
+      <div id="modal-answer" class="modal-answer hidden"></div>
+      <div id="modal-solution" class="modal-solution hidden">
+        <div class="section-label">Solution</div>
+        <div id="modal-solution-body"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
