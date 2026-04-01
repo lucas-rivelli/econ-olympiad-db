@@ -5,6 +5,8 @@ let sortCol       = 'id';
 let sortDir       = 'asc';
 let showAnswer    = false;
 let showSolution  = false;
+let testQuestions = [];   // ordered list of selected question objects
+let dragSrcIdx    = null;
 
 const LETTERS = ['A','B','C','D','E','F','G','H'];
 
@@ -187,8 +189,14 @@ function renderTable() {
   noRes.classList.add('hidden');
   count.textContent = `Showing ${filtered.length} of ${ALL_QUESTIONS.length} questions`;
 
+  const selectedIds = new Set(testQuestions.map(q => q.id));
+
   tbody.innerHTML = filtered.map((q, i) => `
-    <tr data-idx="${i}">
+    <tr data-idx="${i}" class="${selectedIds.has(q.id) ? 'row-selected' : ''}">
+      <td class="td-check" onclick="event.stopPropagation()">
+        <input type="checkbox" class="q-check" data-idx="${i}"
+          ${selectedIds.has(q.id) ? 'checked' : ''}>
+      </td>
       <td class="td-id">${q.id || '—'}</td>
       <td class="td-title">${q.title || '—'}</td>
       <td><span class="badge badge-${q.source}">${q.source || '—'}</span></td>
@@ -202,10 +210,24 @@ function renderTable() {
     </tr>
   `).join('');
 
-  // Row click → open modal
+  // Row click → open modal; checkbox click → toggle test selection
   tbody.querySelectorAll('tr').forEach(row => {
     row.addEventListener('click', () => openModal(filtered[+row.dataset.idx]));
   });
+  tbody.querySelectorAll('.q-check').forEach(cb => {
+    cb.addEventListener('change', () => {
+      toggleTestQuestion(filtered[+cb.dataset.idx]);
+    });
+  });
+
+  // Select-all checkbox
+  const selAll = document.getElementById('select-all');
+  if (selAll) {
+    selAll.checked = filtered.length > 0 && filtered.every(q =>
+      testQuestions.some(t => t.id === q.id));
+    selAll.indeterminate = !selAll.checked &&
+      filtered.some(q => testQuestions.some(t => t.id === q.id));
+  }
 }
 
 /* ── Active filter tags ──────────────────────────────────────────────────── */
@@ -329,6 +351,128 @@ function rerenderMath() {
   }
 }
 
+/* ── Test Builder ────────────────────────────────────────────────────────── */
+function toggleTestQuestion(q) {
+  const idx = testQuestions.findIndex(t => t.id === q.id);
+  if (idx === -1) testQuestions.push(q);
+  else testQuestions.splice(idx, 1);
+  updateTestBuilder();
+  renderTable(); // refresh checkboxes + row highlights
+}
+
+function updateTestBuilder() {
+  const n = testQuestions.length;
+  document.getElementById('test-count').textContent =
+    n === 0 ? '0 questions selected'
+    : n === 1 ? '1 question selected'
+    : `${n} questions selected`;
+
+  const builder = document.getElementById('test-builder');
+  builder.classList.toggle('has-selection', n > 0);
+
+  renderTestList();
+}
+
+function renderTestList() {
+  const list = document.getElementById('test-list');
+  if (testQuestions.length === 0) {
+    list.innerHTML = '<li class="test-empty">No questions selected yet. Check rows in the table.</li>';
+    return;
+  }
+  list.innerHTML = testQuestions.map((q, i) => `
+    <li class="test-item" draggable="true" data-idx="${i}">
+      <span class="drag-handle" title="Drag to reorder">⠿</span>
+      <span class="test-item-num">${i + 1}.</span>
+      <span class="test-item-id">Q${q.id}</span>
+      <span class="test-item-title">${q.title || '—'}</span>
+      <span class="badge badge-${q.topic} badge-sm">${q.topic}</span>
+      <span class="badge badge-${q.type} badge-sm">${q.type}</span>
+      <button class="btn-icon remove-q" data-idx="${i}" title="Remove">✕</button>
+    </li>
+  `).join('');
+
+  list.querySelectorAll('.remove-q').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      testQuestions.splice(+btn.dataset.idx, 1);
+      updateTestBuilder();
+      renderTable();
+    });
+  });
+
+  // Drag-to-reorder
+  list.querySelectorAll('.test-item').forEach(item => {
+    item.addEventListener('dragstart', e => {
+      dragSrcIdx = +item.dataset.idx;
+      item.classList.add('dragging');
+      e.dataTransfer.effectAllowed = 'move';
+    });
+    item.addEventListener('dragend', () => item.classList.remove('dragging'));
+    item.addEventListener('dragover', e => {
+      e.preventDefault();
+      e.dataTransfer.dropEffect = 'move';
+      list.querySelectorAll('.test-item').forEach(i => i.classList.remove('drag-over'));
+      item.classList.add('drag-over');
+    });
+    item.addEventListener('dragleave', () => item.classList.remove('drag-over'));
+    item.addEventListener('drop', e => {
+      e.preventDefault();
+      item.classList.remove('drag-over');
+      const destIdx = +item.dataset.idx;
+      if (dragSrcIdx !== null && dragSrcIdx !== destIdx) {
+        const [moved] = testQuestions.splice(dragSrcIdx, 1);
+        testQuestions.splice(destIdx, 0, moved);
+        dragSrcIdx = null;
+        updateTestBuilder();
+      }
+    });
+  });
+}
+
+function generateLatex(questions, includeSolutions) {
+  const name = (document.getElementById('test-name').value.trim() || 'Test')
+    .replace(/[^a-zA-Z0-9 _\-]/g, '');
+  const inputs = questions.map(q => {
+    const path = (q.file || '').replace(/\.tex$/, '');
+    return `\\input{../${path}}`;
+  }).join('\n');
+  const title = name + (includeSolutions ? ' --- Solutions' : '');
+  const toggle = includeSolutions ? '\\showsolutionstrue' : '\\showsolutionsfalse';
+  const n = questions.length;
+
+  return `% Generated by Econ Olympiad DB — ${new Date().toLocaleDateString()}
+% Place this file in the compiled/ folder, then run:
+%   pdflatex compiled/${name.replace(/ /g,'_')}${includeSolutions ? '_solutions' : '_questions'}.tex
+\\documentclass[12pt,a4paper]{article}
+\\usepackage{../styles/questions}
+${toggle}
+
+\\begin{document}
+
+\\begin{center}
+  {\\LARGE\\textbf{${title}}}\\\\[8pt]
+  {\\large ${n} Question${n !== 1 ? 's' : ''}}
+\\end{center}
+
+\\vspace{1em}
+
+${inputs}
+
+\\end{document}
+`;
+}
+
+function downloadFile(content, filename) {
+  const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(a.href);
+}
+
 /* ── Sort ────────────────────────────────────────────────────────────────── */
 document.querySelectorAll('th.sortable').forEach(th => {
   th.addEventListener('click', () => {
@@ -362,6 +506,51 @@ document.getElementById('reset-filters').addEventListener('click', () => {
 ['filter-source','filter-topic','filter-year','filter-type'].forEach(id => {
   document.getElementById(id).addEventListener('change', applyFilters);
 });
+// Select-all checkbox
+document.getElementById('select-all').addEventListener('change', function() {
+  if (this.checked) {
+    filtered.forEach(q => {
+      if (!testQuestions.some(t => t.id === q.id)) testQuestions.push(q);
+    });
+  } else {
+    const filteredIds = new Set(filtered.map(q => q.id));
+    testQuestions = testQuestions.filter(q => !filteredIds.has(q.id));
+  }
+  updateTestBuilder();
+  renderTable();
+});
+
+// Test builder panel toggle
+document.getElementById('toggle-builder').addEventListener('click', () => {
+  const panel = document.getElementById('test-builder');
+  const btn = document.getElementById('toggle-builder');
+  const isOpen = panel.classList.toggle('open');
+  btn.textContent = isOpen ? 'Build Test ▼' : 'Build Test ▲';
+});
+
+document.getElementById('clear-test').addEventListener('click', () => {
+  testQuestions = [];
+  const panel = document.getElementById('test-builder');
+  panel.classList.remove('open');
+  document.getElementById('toggle-builder').textContent = 'Build Test ▲';
+  updateTestBuilder();
+  renderTable();
+});
+
+document.getElementById('dl-questions').addEventListener('click', () => {
+  if (!testQuestions.length) return;
+  const name = (document.getElementById('test-name').value.trim() || 'Test')
+    .replace(/ /g, '_');
+  downloadFile(generateLatex(testQuestions, false), `${name}_questions.tex`);
+});
+
+document.getElementById('dl-solutions').addEventListener('click', () => {
+  if (!testQuestions.length) return;
+  const name = (document.getElementById('test-name').value.trim() || 'Test')
+    .replace(/ /g, '_');
+  downloadFile(generateLatex(testQuestions, true), `${name}_solutions.tex`);
+});
+
 document.getElementById('modal-close').addEventListener('click', closeModal);
 document.getElementById('modal-overlay').addEventListener('click', e => {
   if (e.target === document.getElementById('modal-overlay')) closeModal();

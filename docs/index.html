@@ -53,6 +53,7 @@
   <table id="q-table">
     <thead>
       <tr>
+        <th class="td-check"><input type="checkbox" id="select-all" title="Select all visible"></th>
         <th data-col="id" class="sortable">ID <span class="sort-arrow">↕</span></th>
         <th data-col="title" class="sortable">Title <span class="sort-arrow">↕</span></th>
         <th data-col="source" class="sortable">Source <span class="sort-arrow">↕</span></th>
@@ -87,6 +88,32 @@
         <div class="section-label">Solution</div>
         <div id="modal-solution-body"></div>
       </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── Test Builder ────────────────────────────────────────────────────────── -->
+<div id="test-builder" class="test-builder">
+  <div class="test-bar" id="test-bar">
+    <div class="test-bar-left">
+      <span class="test-bar-icon">📋</span>
+      <span id="test-count">0 questions selected</span>
+    </div>
+    <div class="test-bar-right">
+      <button id="clear-test" class="btn-secondary btn-sm" title="Clear selection">Clear</button>
+      <button id="toggle-builder" class="btn-primary btn-sm">Build Test ▲</button>
+    </div>
+  </div>
+  <div class="test-panel" id="test-panel">
+    <div class="test-panel-inner">
+      <div class="test-panel-header">
+        <input type="text" id="test-name" placeholder="Test name (e.g. Macro Midterm 2026)">
+        <div class="test-dl-buttons">
+          <button id="dl-questions" class="btn-primary">⬇ Questions .tex</button>
+          <button id="dl-solutions" class="btn-primary">⬇ Solutions .tex</button>
+        </div>
+      </div>
+      <ol id="test-list" class="test-list"></ol>
     </div>
   </div>
 </div>
