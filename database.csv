@@ -1,0 +1,28 @@
+id,title,source,year,round,language,topic,subtopic,type,file_path,answer,has_image
+0001,Elasticity of Demand,OBECON,2023,Phase 1,Portuguese,Micro,Demand Theory,objective,questions/micro/q0001.tex,B,false
+0002,Fiscal Multiplier,IEO,2022,Final,English,Macro,Fiscal Policy,dissertative,questions/macro/q0002.tex,,false
+0003,Some Rubber Duckies,OBECON,2026,Seletiva IEO - Phase A,English,Micro,Supply & Demand,objective,questions/micro/q0003.tex,,false
+0004,1+1=2?,OBECON,2026,Seletiva IEO - Phase A,English,Macro,Labor Markets,objective,questions/macro/q0004.tex,,true
+0005,Classicus Met Keynesson,OBECON,2026,Seletiva IEO - Phase A,English,Macro,History of Economic Thought,objective,questions/macro/q0005.tex,,true
+0006,The Good Liar,OBECON,2026,Seletiva IEO - Phase A,English,Game Theory,Strategic Behavior / Altruism,objective,questions/game_theory/q0006.tex,,true
+0007,Excuse Me I Was Here First!,OBECON,2026,Seletiva IEO - Phase A,English,Macro,Loanable Funds / Crowding Out,objective,questions/macro/q0007.tex,,false
+0008,No Traces Left Behind,OBECON,2026,Seletiva IEO - Phase A,English,Micro,Mathematical Economics / Basic Concepts,objective,questions/micro/q0008.tex,,false
+0009,The Great Bread Divide,OBECON,2026,Seletiva IEO - Phase A,English,Macro,Growth Theory / TFP,objective,questions/macro/q0009.tex,,false
+0010,Beyond the IRR-ational Choice,OBECON,2026,Seletiva IEO - Phase A,English,Finance,Capital Budgeting / NPV-IRR,objective,questions/finance/q0010.tex,,true
+0011,Phillips We Have a Problem,OBECON,2026,Seletiva IEO - Phase A,English,Macro,History of Economic Thought / Phillips Curve,objective,questions/macro/q0011.tex,,false
+0012,Doubling the Target,OBECON,2026,Seletiva IEO - Phase A,English,Micro,Industrial Organization / Cournot,objective,questions/micro/q0012.tex,,false
+0013,Two Intersections,OBECON,2026,Seletiva IEO - Phase A,English,Finance,Time Value of Money / Interest,objective,questions/finance/q0013.tex,,false
+0014,Double It and Give It to the Next Person,OBECON,2026,Seletiva IEO - Phase A,English,Micro,Behavioral Economics / Altruism,objective,questions/micro/q0014.tex,,false
+0015,Comparing Betas,OBECON,2026,Seletiva IEO - Phase A,English,Finance,CAPM / Asset Pricing,objective,questions/finance/q0015.tex,,false
+0016,To Be or Not to Be (Independent),OBECON,2026,Seletiva IEO - Phase A,English,Macro,Monetary Policy / Phillips Curve,objective,questions/macro/q0016.tex,,true
+0017,Cushioning the Fall,OBECON,2026,Seletiva IEO - Phase A,English,Micro,Public Finance / Progressive Taxation,objective,questions/micro/q0017.tex,,false
+0018,Going with the Flow,OBECON,2026,Seletiva IEO - Phase A,English,Macro,Labor Markets / Steady-State Unemployment,objective,questions/macro/q0018.tex,,false
+0019,Selic Under Fire,OBECON,2026,Seletiva IEO - Phase A,English,Macro,Monetary Policy / Central Banking,objective,questions/macro/q0019.tex,,false
+0020,Don't Lose Interest,OBECON,2026,Seletiva IEO - Phase A,English,Finance,Fixed Income / Bond Duration,objective,questions/finance/q0020.tex,,false
+0021,The Expected Cellphone,OBECON,2026,Seletiva IEO - Phase A,English,Micro,Information Economics / Adverse Selection,objective,questions/micro/q0021.tex,,false
+0022,American Dream,OBECON,2026,Seletiva IEO - Phase A,English,Finance,Time Value of Money / Mortgage,objective,questions/finance/q0022.tex,,false
+0023,Robin Hood,OBECON,2026,Seletiva IEO - Phase A,English,Micro,Income Distribution / Poverty,numeric,questions/micro/q0023.tex,,false
+0024,Fed Fights Foreign Forces,OBECON,2026,Seletiva IEO - Phase A,English,Macro,Balance of Payments / Exchange Rate,numeric,questions/macro/q0024.tex,,false
+0025,Maximizing Shareholder Value,OBECON,2026,Seletiva IEO - Phase A,English,Finance,Corporate Finance / IRR,numeric,questions/finance/q0025.tex,,false
+0026,Matthew 14:13-21,OBECON,2026,Seletiva IEO - Phase A,English,Macro,Monetary Policy / Money Multiplier,numeric,questions/macro/q0026.tex,,false
+0027,Follow the Leader,OBECON,2026,Seletiva IEO - Phase A,English,Game Theory,Industrial Organization / Stackelberg vs Cournot,numeric,questions/game_theory/q0027.tex,,false

@@ -1,0 +1,160 @@
+% questions.sty — Economics Olympiad Question Database
+% Style package for formatting and displaying questions
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{questions}[2026/03/31 Economics Olympiad Questions]
+
+%% ── Packages ──────────────────────────────────────────────────────────────────
+\RequirePackage{geometry}
+\RequirePackage{fontenc}
+\RequirePackage{inputenc}
+\RequirePackage{amsmath, amssymb}
+\RequirePackage{graphicx}
+\RequirePackage{xcolor}
+\RequirePackage{enumitem}
+\RequirePackage{fancyhdr}
+\RequirePackage{titlesec}
+\RequirePackage{tcolorbox}
+\RequirePackage{hyperref}
+\RequirePackage{booktabs}
+\RequirePackage{pgfkeys}
+\RequirePackage{etoolbox}
+\RequirePackage{xstring}
+
+\tcbuselibrary{skins, breakable}
+
+%% ── Colors ────────────────────────────────────────────────────────────────────
+\definecolor{qblue}{RGB}{25, 84, 163}
+\definecolor{qgray}{RGB}{245, 245, 245}
+\definecolor{qgreen}{RGB}{34, 139, 34}
+\definecolor{qorange}{RGB}{200, 90, 0}
+\definecolor{metabg}{RGB}{235, 242, 255}
+
+%% ── Toggle: show or hide solutions ───────────────────────────────────────────
+\newif\ifshowsolutions
+\showsolutionstrue   % change to \showsolutionsfalse to hide answers
+
+%% ── Source label formatting ───────────────────────────────────────────────────
+\newcommand{\sourcelabel}[1]{%
+  \IfStrEqCase{#1}{%
+    {OBECON}{\textcolor{qblue}{\textsf{OBECON}}}%
+    {IEO}{\textcolor{qorange}{\textsf{IEO}}}%
+    {CEO}{\textcolor{qgreen}{\textsf{CEO}}}%
+    {REO}{\textcolor{red}{\textsf{REO}}}%
+    {NET}{\textcolor{violet}{\textsf{NET}}}%
+    {NOIC}{\textcolor{teal}{\textsf{NOIC}}}%
+  }[\textsf{#1}]%
+}
+
+%% ── pgfkeys setup for question metadata ──────────────────────────────────────
+\pgfkeys{
+  /question/.is family, /question,
+  id/.store in        = \q@id,
+  title/.store in     = \q@title,
+  source/.store in    = \q@source,
+  year/.store in      = \q@year,
+  round/.store in     = \q@round,
+  language/.store in  = \q@language,
+  topic/.store in     = \q@topic,
+  subtopic/.store in  = \q@subtopic,
+  type/.store in      = \q@type,
+  statement/.store in = \q@statement,
+  choices/.store in   = \q@choices,
+  answer/.store in    = \q@answer,
+  solution/.store in  = \q@solution,
+  % defaults
+  id          = {???},
+  title       = {},
+  source      = {},
+  year        = {},
+  round       = {},
+  language    = {English},
+  topic       = {},
+  subtopic    = {},
+  type        = {objective},
+  statement   = {},
+  choices     = {},
+  answer      = {},
+  solution    = {},
+}
+
+%% ── Main \question command ────────────────────────────────────────────────────
+\newcommand{\question}[1]{%
+  \pgfkeys{/question, #1}%
+  %
+  % ── Metadata header box ─────────────────────────────────────────────────────
+  \begin{tcolorbox}[
+    colback   = metabg,
+    colframe  = qblue,
+    arc       = 3pt,
+    boxrule   = 0.8pt,
+    left      = 6pt, right = 6pt, top = 4pt, bottom = 4pt,
+    fontupper = \small\sffamily,
+  ]
+    \textbf{Q\q@id} \quad
+    \ifx\q@title\empty\else \textit{\q@title} \quad \fi
+    \sourcelabel{\q@source} \textbf{·} \q@year%
+    \ifx\q@round\empty\else\ (\q@round)\fi
+    \hfill
+    \textbf{Topic:} \q@topic%
+    \ifx\q@subtopic\empty\else\ $\triangleright$ \q@subtopic\fi
+    \quad \textbf{Type:} \q@type
+    \quad \textbf{Lang:} \q@language
+  \end{tcolorbox}
+  \vspace{2pt}
+  %
+  % ── Question statement ──────────────────────────────────────────────────────
+  \begin{tcolorbox}[
+    colback  = white,
+    colframe = qblue!40,
+    arc      = 3pt,
+    boxrule  = 0.5pt,
+    breakable,
+    left=8pt, right=8pt, top=6pt, bottom=6pt,
+  ]
+    \q@statement
+    %
+    % ── Choices (objective only) ─────────────────────────────────────────────
+    \ifx\q@choices\empty\else
+      \vspace{6pt}
+      \begin{enumerate}[label=(\Alph*), leftmargin=*, topsep=2pt, itemsep=1pt]
+        \q@choices
+      \end{enumerate}
+    \fi
+  \end{tcolorbox}
+  \vspace{2pt}
+  %
+  % ── Answer & Solution ───────────────────────────────────────────────────────
+  \ifshowsolutions
+    \begin{tcolorbox}[
+      colback  = qgray,
+      colframe = qgreen,
+      arc      = 3pt,
+      boxrule  = 0.6pt,
+      breakable,
+      title    = {\small\sffamily\textbf{Answer \& Solution}},
+      coltitle = white,
+      attach boxed title to top left={yshift=-2mm, xshift=4mm},
+      boxed title style={colback=qgreen, arc=2pt},
+      left=8pt, right=8pt, top=10pt, bottom=6pt,
+    ]
+      \ifx\q@answer\empty\else
+        \textbf{Answer:} \textcolor{qgreen}{\textbf{\q@answer}}\\[4pt]
+      \fi
+      \q@solution
+    \end{tcolorbox}
+  \fi
+  \vspace{10pt}
+}
+
+%% ── Compiled list header (for per-topic or per-olympiad PDFs) ─────────────────
+\newcommand{\dbheader}[2]{%
+  \begin{tcolorbox}[
+    colback=qblue, colframe=qblue, arc=4pt,
+    fontupper=\Large\bfseries\sffamily\color{white},
+    halign=center, valign=center, height=1.2cm,
+  ]
+    #1 — #2
+  \end{tcolorbox}
+  \vspace{8pt}
+}

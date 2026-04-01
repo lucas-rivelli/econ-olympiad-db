@@ -1,0 +1,79 @@
+% OBECON_Seletiva_IEO_2026_PhaseA.tex
+% Compile from Database/ root: pdflatex compiled/OBECON_Seletiva_IEO_2026_PhaseA.tex
+
+\documentclass[12pt, a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{multirow}
+\usepackage{tikz}
+\usepackage{../styles/questions}
+
+\hypersetup{
+  pdftitle  = {OBECON -- Seletiva IEO 2026 Phase A},
+  pdfauthor = {Economics Olympiad Database},
+  colorlinks = true,
+  linkcolor  = qblue,
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\sffamily\small Economics Olympiad Database}
+\rhead{\sffamily\small OBECON -- Seletiva IEO 2026 -- Phase A}
+\cfoot{\thepage}
+
+% Uncomment to compile WITHOUT solutions (for practice)
+% \showsolutionsfalse
+
+\begin{document}
+
+\dbheader{OBECON}{Seletiva IEO 2026 — Phase A}
+
+{\small\sffamily
+\begin{tabular}{ll}
+  \textbf{Questions:} & 25 (Q1--Q20 Multiple Choice; Q21--Q25 Numeric Answer) \\
+  \textbf{Language:}  & English \\
+  \textbf{Authors:}   & Antonio Gama Lima, Cauê Fornielles da Costa,
+                        Leonardo Zanetti Souza, \\
+                      & Lucas Castro Orbite, Lucas Monteiro Rivelli,
+                        Manuela Miranda Buesa, \\
+                      & Nícolas Goulart de Moura, Tarcísio Ferreira Alves Batista \\
+\end{tabular}
+}
+
+\vspace{12pt}
+
+% ── Micro ─────────────────────────────────────────────────────────────────────
+\input{../questions/micro/q0003}   % Q1  Some Rubber Duckies
+\input{../questions/micro/q0008}   % Q6  No Traces Left Behind
+\input{../questions/micro/q0012}   % Q10 Doubling the Target
+\input{../questions/micro/q0014}   % Q12 Double It and Give It to the Next Person
+\input{../questions/micro/q0017}   % Q15 Cushioning the Fall
+\input{../questions/micro/q0021}   % Q19 The Expected Cellphone
+\input{../questions/micro/q0023}   % Q21 Robin Hood [numeric]
+
+% ── Macro ─────────────────────────────────────────────────────────────────────
+\input{../questions/macro/q0004}   % Q2  1+1=2?
+\input{../questions/macro/q0005}   % Q3  Classicus Met Keynesson
+\input{../questions/macro/q0007}   % Q5  Excuse Me, I Was Here First!
+\input{../questions/macro/q0009}   % Q7  The Great Bread Divide
+\input{../questions/macro/q0011}   % Q9  Phillips, We Have a Problem
+\input{../questions/macro/q0016}   % Q14 To Be or Not to Be (Independent)
+\input{../questions/macro/q0018}   % Q16 Going with the Flow
+\input{../questions/macro/q0019}   % Q17 Selic Under Fire
+\input{../questions/macro/q0024}   % Q22 Fed Fights Foreign Forces [numeric]
+\input{../questions/macro/q0026}   % Q24 Matthew 14:13-21 [numeric]
+
+% ── Finance ───────────────────────────────────────────────────────────────────
+\input{../questions/finance/q0010} % Q8  Beyond the IRR-ational Choice
+\input{../questions/finance/q0013} % Q11 Two Intersections
+\input{../questions/finance/q0015} % Q13 Comparing Betas
+\input{../questions/finance/q0020} % Q18 Don't Lose Interest
+\input{../questions/finance/q0022} % Q20 American Dream
+\input{../questions/finance/q0025} % Q23 Maximizing Shareholder Value [numeric]
+
+% ── Game Theory ───────────────────────────────────────────────────────────────
+\input{../questions/game_theory/q0006} % Q4  The Good Liar
+\input{../questions/game_theory/q0027} % Q25 Follow the Leader [numeric]
+
+\end{document}

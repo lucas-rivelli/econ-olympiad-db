@@ -1,0 +1,51 @@
+% q0010.tex — Beyond the IRR-ational Choice (NPV / IRR profiles)
+\question{
+  id        = {0010},
+  title     = {Beyond the IRR-ational Choice},
+  source    = {OBECON},
+  year      = {2026},
+  round     = {Seletiva IEO -- Phase A},
+  language  = {English},
+  topic     = {Finance},
+  subtopic  = {Capital Budgeting / NPV--IRR},
+  type      = {objective},
+  statement = {%
+    An analyst is evaluating two mutually exclusive investment projects,
+    Project~A and Project~B. To compare them, the analyst has plotted their
+    Net Present Value (NPV) profiles against a range of discount rates.
+
+    \vspace{8pt}
+    \begin{center}
+    \begin{tikzpicture}[scale=0.9]
+      \draw[->] (-0.3,0) -- (5.5,0) node[right] {\small Discount Rate (\%)};
+      \draw[->] (0,-0.3) -- (0,4.5) node[above] {\small NPV (\$ millions)};
+      % Project A: high NPV at 0, crosses x-axis at r=20
+      \draw[green!60!black, thick] (0,4) .. controls (2,2.5) and (3.5,0.8) .. (4,0)
+        node[midway, above right] {\small \textcolor{green!60!black}{Project A}};
+      % Project B: lower NPV at 0, crosses x-axis at r=20 too, intersects A at r=10
+      \draw[orange!80!black, thick] (0,2) .. controls (1.5,1.5) and (3,0.5) .. (4,0)
+        node[midway, below right] {\small \textcolor{orange!80!black}{Project B}};
+      % Axis ticks
+      \draw (2,0.05) -- (2,-0.05) node[below] {\small 10};
+      \draw (4,0.05) -- (4,-0.05) node[below] {\small 20};
+      \draw[dashed, gray] (2,0) -- (2,1.8);
+    \end{tikzpicture}
+    \end{center}
+    \vspace{4pt}
+
+    Based on the NPV profiles above, which of the following statements is
+    correct?
+  },
+  choices   = {%
+    \item Project~A should be chosen, regardless of the cost of capital.
+    \item Project~B should be chosen, regardless of the cost of capital.
+    \item Both projects have an Internal Rate of Return (IRR) of 10\%.
+    \item Both projects have an Internal Rate of Return (IRR) of 20\%.
+    \item The choice depends on the cost of capital; Project~A is better if
+          the rate is above a 10\% rate.
+  },
+  answer    = {},
+  solution  = {%
+    % TODO: add solution
+  },
+}

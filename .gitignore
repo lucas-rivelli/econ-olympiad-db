@@ -1,0 +1,21 @@
+# LaTeX compilation artifacts
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+*.bbl
+*.blg
+*.nav
+*.snm
+*.vrb
+*.pdf
+
+# Keep source PDFs in olympiads/ and pdfs/processed/ but exclude pdfs/inbox/
+pdfs/inbox/
+
+# OS
+.DS_Store
+Thumbs.db

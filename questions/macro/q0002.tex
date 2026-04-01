@@ -1,0 +1,43 @@
+% q0002.tex — TEMPLATE dissertativa
+% Para questões dissertativas: deixe choices={} vazio.
+
+\question{
+  id        = {0002},
+  title     = {Fiscal Multiplier},
+  source    = {IEO},
+  year      = {2022},
+  round     = {Final},
+  language  = {English},
+  topic     = {Macro},
+  subtopic  = {Fiscal Policy},
+  type      = {dissertative},
+  statement = {%
+    Suppose a closed economy has a marginal propensity to consume (MPC) of 0.8
+    and the government increases its spending by \$500 million.
+
+    \begin{enumerate}[label=(\alph*)]
+      \item Calculate the fiscal multiplier and the total change in GDP.
+      \item Explain how the presence of income taxes would affect your answer.
+    \end{enumerate}
+  },
+  choices   = {},   % leave empty for dissertative questions
+  answer    = {},   % leave empty or write a brief key if applicable
+  solution  = {%
+    \textbf{(a)} The fiscal multiplier in a closed economy without taxes is:
+    \[
+      k = \frac{1}{1 - \text{MPC}} = \frac{1}{1 - 0.8} = 5
+    \]
+    Total change in GDP:
+    \[
+      \Delta Y = k \cdot \Delta G = 5 \times \$500\text{M} = \$2{,}500\text{ million}
+    \]
+
+    \textbf{(b)} With proportional income taxes at rate $t$, the multiplier becomes:
+    \[
+      k = \frac{1}{1 - \text{MPC}(1-t)}
+    \]
+    Since $\text{MPC}(1-t) < \text{MPC}$, the denominator increases and the
+    multiplier falls. Taxes act as an \emph{automatic stabilizer}, dampening
+    both expansions and contractions.
+  },
+}

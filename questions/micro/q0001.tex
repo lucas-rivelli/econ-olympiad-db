@@ -1,0 +1,37 @@
+% q0001.tex — TEMPLATE / EXAMPLE QUESTION
+% Copy this file to add a new question. Rename to q000X.tex.
+% Do NOT compile this file directly — use a compiled/*.tex master file.
+
+\question{
+  id        = {0001},
+  title     = {Elasticity of Demand},
+  source    = {OBECON},        % OBECON | IEO | CEO | REO | NET | NOIC
+  year      = {2023},
+  round     = {Phase 1},       % e.g. Phase 1, Phase 2, Final, Semifinal
+  language  = {Portuguese},    % Portuguese | English | Russian | French
+  topic     = {Micro},
+  subtopic  = {Demand Theory},
+  type      = {objective},     % objective | dissertative
+  statement = {%
+    Se o preço de um bem aumenta de R\$10 para R\$12 e a quantidade demandada
+    cai de 100 para 80 unidades, qual é a elasticidade-preço da demanda
+    (em valor absoluto)?
+  },
+  choices   = {%
+    \item 0{,}5
+    \item 1{,}0
+    \item 1{,}5
+    \item 2{,}0
+    \item 2{,}5
+  },
+  answer    = {B},
+  solution  = {%
+    Usando a fórmula da elasticidade ponto:
+    \[
+      \varepsilon = \left|\frac{\Delta Q / Q}{\Delta P / P}\right|
+                  = \left|\frac{-20/100}{+2/10}\right|
+                  = \left|\frac{-0{,}2}{0{,}2}\right| = 1{,}0
+    \]
+    Portanto, a demanda é unitariamente elástica. Alternativa \textbf{(B)}.
+  },
+}

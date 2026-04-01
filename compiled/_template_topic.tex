@@ -1,0 +1,34 @@
+% _template_topic.tex
+% Duplicate and rename for each topic, e.g. micro.tex, macro.tex
+% Run: pdflatex compiled/micro.tex  (from the Database/ root)
+
+\documentclass[12pt, a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{../styles/questions}
+
+\hypersetup{
+  pdftitle  = {TOPIC — Question Bank},
+  pdfauthor = {Economics Olympiad Database},
+  colorlinks = true,
+  linkcolor  = qblue,
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\sffamily\small Economics Olympiad Database}
+\rhead{\sffamily\small TOPIC}
+\cfoot{\thepage}
+
+% Uncomment the line below to compile WITHOUT solutions (e.g. for practice sets)
+% \showsolutionsfalse
+
+\begin{document}
+
+\dbheader{TOPIC}{Question Bank}
+
+% ── List all questions from this topic below ──────────────────────────────────
+% \input{../questions/micro/q0001}
+
+\end{document}

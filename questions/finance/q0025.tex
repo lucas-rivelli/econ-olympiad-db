@@ -1,0 +1,44 @@
+% q0025.tex — Maximizing shareholder value (M&A / IRR) [Numeric Answer]
+\question{
+  id        = {0025},
+  title     = {Maximizing Shareholder Value},
+  source    = {OBECON},
+  year      = {2026},
+  round     = {Seletiva IEO -- Phase A},
+  language  = {English},
+  topic     = {Finance},
+  subtopic  = {Corporate Finance / IRR},
+  type      = {numeric},
+  statement = {%
+    An analyst at a manufacturing company is evaluating a vertical M\&A
+    opportunity to acquire a key supplier. The company's shareholders are
+    risk-neutral. The acquisition would require an upfront payment of
+    \$100 million and is expected to generate cash flows in two periods:
+    period~1 (short-term) and period~2 (long-term).
+
+    The expected cash flows depend heavily on macroeconomic conditions. The
+    analyst has identified three scenarios for the short term:
+    \begin{itemize}
+      \item \textbf{Base Case} (45\% probability): \$80 million
+      \item \textbf{Bear Case} (40\% probability): half of the base case
+      \item \textbf{Bull Case} (15\% probability): four times the base case
+    \end{itemize}
+    The long-term cash flow is expected to be \$200 million across all
+    scenarios.
+
+    Given that shareholders are risk-neutral, calculate the Internal Rate of
+    Return (IRR) per period for this M\&A project.
+
+    Give the answer as a percentage rounded to the nearest integer. If the
+    fractional part is 0.5, round to the nearest even integer.
+  },
+  choices   = {},
+  answer    = {},
+  solution  = {%
+    % TODO: add solution
+    % E[CF1] = 0.45*80 + 0.40*40 + 0.15*320 = 36 + 16 + 48 = 100
+    % NPV = -100 + 100/(1+r) + 200/(1+r)^2 = 0
+    % Let x = 1/(1+r): 200x^2 + 100x - 100 = 0
+    % 2x^2 + x - 1 = 0 => (2x - 1)(x + 1) = 0 => x = 0.5 => r = 100%
+  },
+}
