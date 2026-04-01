@@ -15,7 +15,7 @@ function ltx(tex) {
 
   // Images
   s = s.replace(/\\includegraphics(?:\[.*?\])?\{\.\.\/images\/(.*?)\}/g,
-    '<img src="../images/$1" alt="figure">');
+    '<img src="images/$1" alt="figure">');
 
   // tcolorbox → news-box (capture content inside optional args and mandatory arg)
   s = s.replace(/\\begin\{tcolorbox\}(?:\[.*?\])?([\s\S]*?)\\end\{tcolorbox\}/g,
@@ -54,6 +54,14 @@ function ltx(tex) {
 }
 
 function ltxInline(s) {
+  // Protect math regions so we don't mangle LaTeX inside $...$ or \[...\]
+  const mathRegions = [];
+  s = s.replace(/(\$\$[\s\S]*?\$\$|\\\[[\s\S]*?\\\]|\\\([\s\S]*?\\\)|\$[^$\n]*?\$)/g, match => {
+    const idx = mathRegions.length;
+    mathRegions.push(match);
+    return `\x00MATH${idx}\x00`;
+  });
+
   // Text formatting
   s = s.replace(/\\textbf\{([\s\S]*?)\}/g,  '<strong>$1</strong>');
   s = s.replace(/\\textit\{([\s\S]*?)\}/g,  '<em>$1</em>');
@@ -70,7 +78,7 @@ function ltxInline(s) {
   s = s.replace(/\\cdot/g,      '·');
   s = s.replace(/\\%/g,         '%');
   s = s.replace(/\\&/g,         '&amp;');
-  s = s.replace(/\\\$/g,        '$');
+  s = s.replace(/\\\$/g,        '&#36;');
   s = s.replace(/\\#/g,         '#');
   s = s.replace(/\\{/g,         '{');
   s = s.replace(/\\}/g,         '}');
@@ -80,6 +88,8 @@ function ltxInline(s) {
   s = s.replace(/''/g,          '\u201D');
 
   // Spacing/breaks
+  s = s.replace(/\\ /g, ' ');
+  s = s.replace(/~/g, '\u00a0');
   s = s.replace(/\\\\(\[.*?\])?/g, '<br>');
   s = s.replace(/\\(?:[vh]space\*?|medskip|bigskip|smallskip|noindent)\{?.*?\}?/g, '');
   s = s.replace(/\\quad|\\qquad|\\,|\\;|\\:/g, ' ');
@@ -90,6 +100,9 @@ function ltxInline(s) {
   s = s.replace(/\\(?:centering|raggedright|raggedleft)/g, '');
   s = s.replace(/\\multirow\{.*?\}\{.*?\}\{([\s\S]*?)\}/g, '$1');
   s = s.replace(/\\multicolumn\{.*?\}\{.*?\}\{([\s\S]*?)\}/g, '$1');
+
+  // Restore math regions
+  s = s.replace(/\x00MATH(\d+)\x00/g, (_, i) => mathRegions[+i]);
 
   // \mathbb{Z} etc handled by MathJax
   return s;

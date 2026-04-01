@@ -4,7 +4,7 @@ id,title,source,year,round,language,topic,subtopic,type,file_path,answer,has_ima
 0003,Some Rubber Duckies,OBECON,2026,Seletiva IEO - Phase A,English,Micro,Supply & Demand,objective,questions/micro/q0003.tex,A,false
 0004,1+1=2?,OBECON,2026,Seletiva IEO - Phase A,English,Macro,Labor Markets,objective,questions/macro/q0004.tex,A,true
 0005,Classicus Met Keynesson,OBECON,2026,Seletiva IEO - Phase A,English,Macro,History of Economic Thought,objective,questions/macro/q0005.tex,A,true
-0006,The Good Liar,OBECON,2026,Seletiva IEO - Phase A,English,Game Theory,Strategic Behavior / Altruism,objective,questions/game_theory/q0006.tex,A,false
+0006,The Good Liar,OBECON,2026,Seletiva IEO - Phase A,English,Game Theory,Strategic Behavior / Altruism,objective,questions/game_theory/q0006.tex,B,false
 0007,Excuse Me I Was Here First!,OBECON,2026,Seletiva IEO - Phase A,English,Macro,Loanable Funds / Crowding Out,objective,questions/macro/q0007.tex,D,false
 0008,No Traces Left Behind,OBECON,2026,Seletiva IEO - Phase A,English,Micro,Mathematical Economics / Basic Concepts,objective,questions/micro/q0008.tex,C,false
 0009,The Great Bread Divide,OBECON,2026,Seletiva IEO - Phase A,English,Macro,Growth Theory / TFP,objective,questions/macro/q0009.tex,D,false
@@ -25,4 +25,4 @@ id,title,source,year,round,language,topic,subtopic,type,file_path,answer,has_ima
 0024,Fed Fights Foreign Forces,OBECON,2026,Seletiva IEO - Phase A,English,Macro,Balance of Payments / Exchange Rate,numeric,questions/macro/q0024.tex,-4,false
 0025,Maximizing Shareholder Value,OBECON,2026,Seletiva IEO - Phase A,English,Finance,Corporate Finance / IRR,numeric,questions/finance/q0025.tex,100,false
 0026,Matthew 14:13-21,OBECON,2026,Seletiva IEO - Phase A,English,Macro,Monetary Policy / Money Multiplier,numeric,questions/macro/q0026.tex,5000,false
-0027,Follow the Leader,OBECON,2026,Seletiva IEO - Phase A,English,Game Theory,Industrial Organization / Stackelberg vs Cournot,numeric,questions/game_theory/q0027.tex,200,false
+0027,Follow the Leader,OBECON,2026,Seletiva IEO - Phase A,English,Game Theory,Industrial Organization / Stackelberg vs Cournot,numeric,questions/game_theory/q0027.tex,-200,false

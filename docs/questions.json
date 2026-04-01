@@ -121,7 +121,7 @@
       "(Down, Right).",
       "There is no Nash Equilibrium in this game."
     ],
-    "answer": "A",
+    "answer": "B",
     "solution": "Ana believes Bob has altruistic preferences, so she thinks Bob's utility\n    is $U_\\text{Bob} = \\pi_\\text{Bob} + \\pi_\\text{Ana}$.\n    Ana re-evaluates Bob's payoffs accordingly:\n\n    \\begin{center}\n    \\begin{tabular}{c|cc}\n            & Left & Right \\\\\n      \\hline\n      Up    & $6+6=12$ & $10+0=10$ \\\\\n      Down  & $0+4=4$  & $1+1=2$   \\\\\n    \\end{tabular}\n    \\end{center}\n\n    From Ana's perspective (believing Bob is altruistic):\n    \\begin{itemize}\n      \\item If Ana plays \\textit{Up}: Bob prefers Left ($12 > 10$).\n      \\item If Ana plays \\textit{Down}: Bob prefers Left ($4 > 2$).\n    \\end{itemize}\n    $\\Rightarrow$ Bob's dominant strategy (as Ana believes) is \\textbf{Left}.\n\n    Knowing Bob will play Left, Ana compares:\n    \\begin{itemize}\n      \\item Up + Left: Ana gets $\\mathbf{6}$\n      \\item Down + Left: Ana gets $4$\n    \\end{itemize}\n    $\\Rightarrow$ Ana plays \\textbf{Up}.\n\n    Outcome: \\textbf{(Up, Left)}. Note that in reality Bob would play Right\n    (dominant strategy for the real payoffs), but Ana was deceived.\n    Answer: \\textbf{(A)}.",
     "file": "questions/game_theory/q0006.tex"
   },
@@ -553,7 +553,7 @@
     "type": "numeric",
     "statement": "Two oil companies compete in a Stackelberg duopoly (rotating leadership)\n    where the firm producing less becomes leader next period. Firm~A leads in\n    period 1. Market demand: $Q = 360 - p$; both firms have $MC = 120$, no\n    fixed costs; interest rate 20\\%. No collusion; game is infinite-horizon.\n\n    Find $(S_A + S_B) - (C_A + C_B)$ over 10 years, where $S_i$ is firm~$i$'s\n    total output under the new rule and $C_i$ under Cournot.",
     "choices": [],
-    "answer": "200",
+    "answer": "-200",
     "solution": "\\textbf{Cournot equilibrium:}\\\\\n    Profit: $\\pi_i = (240 - q_i - q_j)q_i$; FOC: $240 - 2q_i - q_j = 0$.\\\\\n    Symmetric: $q^C = 80$ each, $Q^C = 160$.\\\\\n    Over 10 periods: $C_A = C_B = 800$, so $C_A + C_B = 1{,}600$.\n\n    \\textbf{Stackelberg equilibrium:}\\\\\n    Follower BR: $q_F = \\dfrac{240 - q_L}{2}$.\\\\\n    Leader: $\\max (240 - q_L - q_F)q_L = \\max \\dfrac{240 - q_L}{2} q_L$.\\\\\n    FOC: $q_L^S = 120$; $q_F^S = 60$.\n\n    \\textbf{Leadership rotation:}\\\\\n    Period 1: A leads ($q_A=120$, $q_B=60$). B produces less $\\Rightarrow$\n    B leads next.\\\\\n    Period 2: B leads ($q_B=120$, $q_A=60$). A produces less $\\Rightarrow$\n    A leads next.\\\\\n    Pattern alternates every period.\n\n    Over 10 periods (A leads in 1,3,5,7,9; B leads in 2,4,6,8,10):\n    \\[\n      S_A = 5 \\times 120 + 5 \\times 60 = 600 + 300 = 900\n    \\]\n    \\[\n      S_B = 5 \\times 60 + 5 \\times 120 = 300 + 600 = 900\n    \\]\n    \\[\n      S_A + S_B = 1{,}800\n    \\]\n\n    \\textbf{Difference:}\n    \\[\n      (S_A + S_B) - (C_A + C_B) = 1{,}800 - 1{,}600 = \\mathbf{200}\n    \\]\n\n    The rotating-Stackelberg policy \\emph{increases} total output (closer to\n    competitive level), which was the government's goal to reduce market\n    power externalities.",
     "file": "questions/game_theory/q0027.tex"
   }
