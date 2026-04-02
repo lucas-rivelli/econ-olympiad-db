@@ -98,21 +98,17 @@
     <div class="test-bar-left">
       <span class="test-bar-icon">📋</span>
       <span id="test-count">0 questions selected</span>
+      <input type="text" id="test-name" placeholder="Test name…">
     </div>
     <div class="test-bar-right">
-      <button id="clear-test" class="btn-secondary btn-sm" title="Clear selection">Clear</button>
-      <button id="toggle-builder" class="btn-primary btn-sm">Build Test ▲</button>
+      <button id="dl-questions" class="btn-primary btn-sm">⬇ Questions PDF</button>
+      <button id="dl-solutions" class="btn-primary btn-sm">⬇ Solutions PDF</button>
+      <button id="toggle-builder" class="btn-secondary btn-sm" title="Reorder questions">☰ Reorder</button>
+      <button id="clear-test" class="btn-secondary btn-sm" title="Clear selection">✕</button>
     </div>
   </div>
   <div class="test-panel" id="test-panel">
     <div class="test-panel-inner">
-      <div class="test-panel-header">
-        <input type="text" id="test-name" placeholder="Test name (e.g. Macro Midterm 2026)">
-        <div class="test-dl-buttons">
-          <button id="dl-questions" class="btn-primary">⬇ Questions PDF</button>
-          <button id="dl-solutions" class="btn-primary">⬇ Solutions PDF</button>
-        </div>
-      </div>
       <ol id="test-list" class="test-list"></ol>
     </div>
   </div>

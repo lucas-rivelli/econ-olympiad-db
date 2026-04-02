@@ -464,9 +464,15 @@ tr.row-selected td { background: #eef3fb; }
   display: flex; align-items: center; justify-content: space-between;
   padding: 10px 24px; cursor: default; min-height: 52px;
 }
-.test-bar-left  { display: flex; align-items: center; gap: 10px; font-weight: 600; color: var(--primary); }
-.test-bar-right { display: flex; align-items: center; gap: 8px; }
-.test-bar-icon  { font-size: 18px; }
+.test-bar-left  { display: flex; align-items: center; gap: 10px; font-weight: 600; color: var(--primary); flex: 1; min-width: 0; }
+.test-bar-right { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+.test-bar-icon  { font-size: 18px; flex-shrink: 0; }
+#test-name {
+  flex: 1; min-width: 0; max-width: 260px;
+  border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 5px 10px; font-size: 13px; outline: none;
+}
+#test-name:focus { border-color: var(--primary); }
 
 .test-panel {
   max-height: 0; overflow: hidden;
@@ -478,17 +484,6 @@ tr.row-selected td { background: #eef3fb; }
   padding: 0 24px 16px;
   border-top: 1px solid var(--border);
 }
-.test-panel-header {
-  display: flex; align-items: center; gap: 12px;
-  padding: 12px 0 10px; flex-wrap: wrap;
-}
-#test-name {
-  flex: 1; min-width: 200px;
-  border: 1px solid var(--border); border-radius: var(--radius);
-  padding: 7px 12px; font-size: 14px; outline: none;
-}
-#test-name:focus { border-color: var(--primary); }
-.test-dl-buttons { display: flex; gap: 8px; }
 
 /* ── Test question list ──────────────────────────────────────────────────── */
 .test-list {
